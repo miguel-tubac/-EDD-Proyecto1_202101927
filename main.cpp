@@ -1,15 +1,41 @@
 #include <iostream>
 
+using namespace std; //Esto es para evitar colocar delante de cada variable std ::
+
+
+#include "includes/MatrizDispersa/MatrizDispersa.h"
+
 int main() {
+    /*
+     *Ejemplo de como insertar un valor en la matriz
+    MatrizDispersa *matriz = new MatrizDispersa();
+    matriz->insertarValor(5, 0, 0);*/
 
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    int opcion;
+    do {
+        cout << "\n------------------------ Renta de Activos -----------------------" << endl;
+        cout << "1. Iniciar Sesion" << endl;
+        cout << "2. Salir" << endl;
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
 
-    for (int i = 1; i <= 5; i++) {
+        switch(opcion) {
+            case 1:
+                cout << "Iniciando sesion..." << endl;
+                break;
+            case 2:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida. Por favor, intente de nuevo." << endl;
+        }
 
-        std::cout << "i = " << i << std::endl;
-    }
+        cout << endl;
+    } while(opcion != 2);
 
     return 0;
 }
+
+
+
 

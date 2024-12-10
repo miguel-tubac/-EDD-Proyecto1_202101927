@@ -32,8 +32,21 @@ class MatrizDispersa {
     NodoMatriz *insertarCabeVertical(int valor);
 
     //Para insertar un nodo a la matriz
-    void insertarAlfinal(int valor, NodoMatriz *cabHorizontal, NodoMatriz *cabVertical);
+    void insertarAlfinal(NodoMatriz *valor, NodoMatriz *cabHorizontal, NodoMatriz *cabVertical);
 
+    //Para insertar en medio de las de la matriz
+    void insertarAlfinalH(NodoMatriz *valor, NodoMatriz *cabHorizontal);
+    void insertarAlfinalV(NodoMatriz *valor, NodoMatriz *cabVertical);
+    void insertarAlMedioH(NodoMatriz *valor, NodoMatriz *horizontal);
+    void insertarAlMedioV(NodoMatriz *valor, NodoMatriz *vertical);
+
+    //Esto serviran para encontrar las cebeceras de un usuario en especifico
+    NodoMatriz *enCabeceraH(NodoMatriz *nodo);
+    NodoMatriz *enCabeceraV(NodoMatriz *nodo);
+
+    //Funcion para saber si el nodo esta mas abajo
+    bool masAbajo(NodoMatriz *cabeV, int cabV);
+    bool masDerecho(NodoMatriz *cabeH, int cabH);
 };
 
 

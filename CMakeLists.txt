@@ -7,4 +7,6 @@ add_executable(Proyecto_1 main.cpp
         includes/MatrizDispersa/NodoMatriz.h
         src/MatrizDispersa/NodoMatriz.cpp
         includes/MatrizDispersa/MatrizDispersa.h
-        src/MatrizDispersa/MatrizDispersa.cpp)
+        src/MatrizDispersa/MatrizDispersa.cpp
+        includes/Clases/Usuarios.h
+        src/Clases/Usuarios.cpp)

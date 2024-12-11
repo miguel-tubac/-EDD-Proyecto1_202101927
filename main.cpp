@@ -4,7 +4,10 @@ using namespace std; //Esto es para evitar colocar delante de cada variable std 
 
 
 #include "includes/MatrizDispersa/MatrizDispersa.h"
+#include "includes/Clases/Usuarios.h"
 
+
+MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris general
 
 void registrar_usuario() {
     cout << "\n------------------------ Menu Administrador -----------------------" << endl;
@@ -23,6 +26,9 @@ void registrar_usuario() {
     cout << "Ingresar Empresa: ";
     cin >> empresa;
 
+    Usuarios* userNuevo = new Usuarios(usuario, pasword); //Este es el objeto del usuario
+
+    matrizGeneral->insertarValor(userNuevo, departamento, empresa);//Aca se ingresa en la matris dispersa
     /*
      *Ejemplo de como insertar un valor en la matriz
     MatrizDispersa *matriz = new MatrizDispersa();

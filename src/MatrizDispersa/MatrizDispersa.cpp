@@ -14,14 +14,14 @@ MatrizDispersa::MatrizDispersa() {
 
 //Estos son los metodos que declare en la cabecera .h
 
-NodoMatriz *MatrizDispersa::existecabeHorizontal(int valor) {
+NodoMatriz *MatrizDispersa::existecabeHorizontal(std::string cabecera) {
     if (estaVacia()) {
         return nullptr;
     }
 
     NodoMatriz *aux = horizontal;//vamos a recorrer las cabeceras horizontales
     while (aux != nullptr) {
-        if (aux->valor == valor) {
+        if (aux->cabecera == cabecera) {
             return aux;
         }
         aux = aux->siguiente;
@@ -29,14 +29,14 @@ NodoMatriz *MatrizDispersa::existecabeHorizontal(int valor) {
     return nullptr;
 }
 
-NodoMatriz *MatrizDispersa::existecabeVertical(int valor) {
+NodoMatriz *MatrizDispersa::existecabeVertical(std::string cabecera) {
     if (estaVacia()) {
         return nullptr;
     }
 
     NodoMatriz *aux = vertical;//vamos a recorrer las cabeceras verticales
     while (aux != nullptr) {
-        if (aux->valor == valor) {
+        if (aux->cabecera == cabecera) {
             return aux;
         }
         aux = aux->abajo;
@@ -50,8 +50,8 @@ bool MatrizDispersa::estaVacia() {
 }
 
 
-NodoMatriz *MatrizDispersa::insertarCabeHorizontal(int valor) {
-    NodoMatriz *nuevaCabe = new NodoMatriz(valor);
+NodoMatriz *MatrizDispersa::insertarCabeHorizontal(std::string cabecera) {
+    NodoMatriz *nuevaCabe = new NodoMatriz(cabecera);
 
     //Esto es cuando es el primer nodo horizontal
     if (this->horizontal == nullptr) {
@@ -70,8 +70,8 @@ NodoMatriz *MatrizDispersa::insertarCabeHorizontal(int valor) {
     return nuevaCabe;//Retornamos el nodo de la nueva cabecera
 }
 
-NodoMatriz *MatrizDispersa::insertarCabeVertical(int valor) {
-    NodoMatriz *nuevaCabe = new NodoMatriz(valor);
+NodoMatriz *MatrizDispersa::insertarCabeVertical(std::string cabecera) {
+    NodoMatriz *nuevaCabe = new NodoMatriz(cabecera);
 
     //Esto es cuando es el primer nodo horizontal
     if (this->vertical == nullptr) {
@@ -92,7 +92,7 @@ NodoMatriz *MatrizDispersa::insertarCabeVertical(int valor) {
 
 
 
-void MatrizDispersa::insertarValor(int valor, int cabHorizontal, int cabVertical) {
+void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, std::string cabVertical) {
     //Si esta vacia se incertan las cabeceras es el caso mas cencillo
     NodoMatriz *cabeHorizontal = nullptr;
     NodoMatriz *cabeVertical = nullptr;
@@ -249,11 +249,11 @@ NodoMatriz *MatrizDispersa::enCabeceraV(NodoMatriz *nodo) {
 
 
 //Con esto compruebo si el nodo que estoy buscando esta mas a la izquierda o abajo
-bool MatrizDispersa::masAbajo(NodoMatriz *cabeV, int cabV) {
+bool MatrizDispersa::masAbajo(NodoMatriz *cabeV, std::string cabV) {
     NodoMatriz *aux = cabeV;
 
     while (aux != nullptr) {
-        if (aux->valor == cabV) {
+        if (aux->cabecera == cabV) {
             return true;
         }
         aux = aux->abajo;
@@ -262,11 +262,11 @@ bool MatrizDispersa::masAbajo(NodoMatriz *cabeV, int cabV) {
 }
 
 
-bool MatrizDispersa::masDerecho(NodoMatriz *cabeH, int cabH) {
+bool MatrizDispersa::masDerecho(NodoMatriz *cabeH, std::string cabH) {
     NodoMatriz *aux = cabeH;
 
     while (aux != nullptr) {
-        if (aux->valor == cabH) {
+        if (aux->cabecera == cabH) {
             return true; //Si este nodo es la cabecera que estoy buscando retorno true
         }
 

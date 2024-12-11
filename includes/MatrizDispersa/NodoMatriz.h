@@ -5,12 +5,14 @@
 #ifndef NODOMATRIZ_H
 #define NODOMATRIZ_H
 
-
+#include "../Clases/Usuarios.h"
 
 class NodoMatriz {
     //tiene que tener 6 apuntadores por que es en tres dimenciones
     public:
-    int valor;
+    //int valor;
+    Usuarios* valor;
+    std::string cabecera;
 
     NodoMatriz *siguiente;
     NodoMatriz *anterior;
@@ -22,7 +24,8 @@ class NodoMatriz {
     NodoMatriz *atras;
 
     //Este es el constructor
-    NodoMatriz(int valor);
+    NodoMatriz(Usuarios* valor);
+    NodoMatriz(std::string cabecera);
 };
 
 

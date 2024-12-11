@@ -21,15 +21,15 @@ class MatrizDispersa {
     bool estaVacia();
 
     //Para ver si existe la cavecera
-    NodoMatriz *existecabeHorizontal(int valor);
-    NodoMatriz *existecabeVertical(int valor);
+    NodoMatriz *existecabeHorizontal(std::string cabecera);
+    NodoMatriz *existecabeVertical(std::string cabecera);
 
     //Para insertar el valor
-    void insertarValor(int valor, int cabHorizontal, int cabVertical);
+    void insertarValor(Usuarios* valor, std::string cabHorizontal, std::string cabVertical);
 
     //Para insertar las cabeceras
-    NodoMatriz *insertarCabeHorizontal(int valor);
-    NodoMatriz *insertarCabeVertical(int valor);
+    NodoMatriz *insertarCabeHorizontal(std::string valor);
+    NodoMatriz *insertarCabeVertical(std::string valor);
 
     //Para insertar un nodo a la matriz
     void insertarAlfinal(NodoMatriz *valor, NodoMatriz *cabHorizontal, NodoMatriz *cabVertical);
@@ -45,8 +45,8 @@ class MatrizDispersa {
     NodoMatriz *enCabeceraV(NodoMatriz *nodo);
 
     //Funcion para saber si el nodo esta mas abajo
-    bool masAbajo(NodoMatriz *cabeV, int cabV);
-    bool masDerecho(NodoMatriz *cabeH, int cabH);
+    bool masAbajo(NodoMatriz *cabeV, std::string cabV);
+    bool masDerecho(NodoMatriz *cabeH, std::string cabH);
 };
 
 

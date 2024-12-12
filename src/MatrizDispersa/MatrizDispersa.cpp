@@ -11,7 +11,7 @@ MatrizDispersa::MatrizDispersa() {
     this->vertical = nullptr;
 }
 
-
+std::string nombre_usuario = "";
 //Estos son los metodos que declare en la cabecera .h
 
 NodoMatriz *MatrizDispersa::existecabeHorizontal(std::string cabecera) {
@@ -276,6 +276,36 @@ bool MatrizDispersa::masDerecho(NodoMatriz *cabeH, std::string cabH) {
     return false;//Esto retorna falso si no esta mas a la derecha
 }
 
+
+bool MatrizDispersa::existePaswordUser(std::string username, std::string password) {
+    if (estaVacia()) {
+        return false; // La matriz está vacía, no hay usuarios.
+    }
+
+    // Recorremos las cabeceras horizontales.
+    NodoMatriz *cabeHorizontalAux = horizontal;
+    while (cabeHorizontalAux != nullptr) {
+        // Recorremos cada nodo en la fila correspondiente.
+        NodoMatriz *nodoAux = cabeHorizontalAux;
+        while (nodoAux != nullptr) {
+            if (nodoAux->valor != nullptr &&
+                nodoAux->valor->usuar == username &&
+                nodoAux->valor->pasword == password) {
+                nombre_usuario = nodoAux->valor->nombre;
+                return true; // Usuario y contraseña encontrados.
+                }
+            nodoAux = nodoAux->siguiente;
+        }
+        cabeHorizontalAux = cabeHorizontalAux->abajo;
+    }
+
+    return false; // No se encontró ningún nodo con el usuario y contraseña.
+}
+
+
+std::string MatrizDispersa::getNombre() {
+    return nombre_usuario;
+}
 
 
 

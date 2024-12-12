@@ -9,36 +9,38 @@ using namespace std; //Esto es para evitar colocar delante de cada variable std 
 
 MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris general
 
+string name = "";
+
 void registrar_usuario() {
     cout << "\n------------------------ Menu Administrador -----------------------" << endl;
     cout << "------------------------ 1. Registrar Usuario -----------------------" << endl;
+
     string usuario;
     string pasword;
+    string nombre;
     string departamento;
     string empresa;
 
-    cout << "Ingresar Usuario: ";
+    cout << "Ingresa Username: ";
     cin >> usuario;
+    cin.ignore(); // Limpiar el buffer de entrada para evitar problemas con getline
     cout << "Ingresar Password: ";
     cin >> pasword;
+    cin.ignore(); // Limpiar el buffer de entrada para evitar problemas con getline
+    cout << "Ingresar Nombre: ";
+    std::getline(cin, nombre);
     cout << "Ingresar Departamento: ";
-    cin >> departamento;
+    std::getline(cin, departamento);
     cout << "Ingresar Empresa: ";
-    cin >> empresa;
+    std::getline(cin, empresa);
 
-    Usuarios* userNuevo = new Usuarios(usuario, pasword); //Este es el objeto del usuario
+    // Crear el objeto del usuario
+    Usuarios* userNuevo = new Usuarios(usuario, nombre, pasword);
 
-    matrizGeneral->insertarValor(userNuevo, departamento, empresa);//Aca se ingresa en la matris dispersa
-    /*
-     *Ejemplo de como insertar un valor en la matriz
-    MatrizDispersa *matriz = new MatrizDispersa();
-
-    insertarValor(int valor, int cabHorizontal, int cabVertical)
-    int valor: objeto usuarioss(usuario, pasword)
-    matriz->insertarValor(usuarioss, departamento, empresa)
-
-    matriz->insertarValor(5, 0, 0);*/
+    // Insertar el usuario en la matriz dispersa
+    matrizGeneral->insertarValor(userNuevo, departamento, empresa);
 }
+
 
 
 void menu_admin() {
@@ -94,6 +96,56 @@ void menu_admin() {
 }
 
 
+
+//Este es el menu del usuario
+void menu_user() {
+    int opcion;
+    name = matrizGeneral->getNombre();
+    do {
+        cout << "\n------------------------ "<< name <<" -----------------------" << endl;
+        cout << "1. Agregar Activo" << endl;
+        cout << "2. Eliminar Activo" << endl;
+        cout << "3. Modificar Activo" << endl;
+        cout << "4. Rentar Activo" << endl;
+        cout << "5. Activos Rentados" << endl;
+        cout << "6. Mis Activos Rentados" << endl;
+        cout << "7. Cerrar Sesion" << endl;
+        cout << "\nIngrese una opcion: ";
+        cin >> opcion;
+
+        switch(opcion) {
+            case 1:
+                cout << "Registrar Usuario..." << endl;
+            registrar_usuario();
+            break;
+            case 2:
+                cout << "Reporte Matriz Dispersa..." << endl;
+            break;
+            case 3:
+                cout << "Reporte Activos Disponibles de un Departamento..." << endl;
+            break;
+            case 4:
+                cout << "Reporte Activos Disponibles de una Empresa..." << endl;
+            break;
+            case 5:
+                cout << "Reporte Transacciones..." << endl;
+            break;
+            case 6:
+                cout << "Reporte Activos de un Usuario..." << endl;
+            break;
+            case 7:
+                cout << "....Finalizando Sesion....." << endl;
+            break;
+            default:
+                cout << "Opcion invalida. Por favor, intente de nuevo." << endl;
+        }
+
+        cout << endl;
+    }while (opcion != 7);
+}
+
+
+
 void iniciar_sesion() {
     string usuarioAdmin = "admin";
     string contraAdmin = "admin";
@@ -111,6 +163,10 @@ void iniciar_sesion() {
         cout << "Ingrese la contrasena: ";
         cin >> contra;
 
+        if (matrizGeneral->existePaswordUser(usuario, contra)) {
+            break;
+        }
+
         if (usuarioAdmin == usuario && contraAdmin == contra) {
             correcto = true;
             break;
@@ -123,6 +179,8 @@ void iniciar_sesion() {
 
     if (correcto) {
         menu_admin();
+    }else {
+        menu_user();
     }
 }
 

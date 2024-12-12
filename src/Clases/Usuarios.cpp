@@ -2,8 +2,9 @@
 //
 // Created by tubac on 10/12/2024.
 //
-Usuarios::Usuarios(std::string usuar, std::string pasword) {
+Usuarios::Usuarios(std::string usuar, std::string nombre, std::string pasword) {
     this->usuar = usuar;
     this->pasword = pasword;
+    this->nombre = nombre;
 }
 

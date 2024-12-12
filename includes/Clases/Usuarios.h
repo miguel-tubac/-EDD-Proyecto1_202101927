@@ -11,9 +11,10 @@
 class Usuarios {
     public:
     std::string usuar;
+    std::string nombre;
     std::string pasword;
 
-    Usuarios(std::string usuar, std::string pasword);
+    Usuarios(std::string usuar, std::string nombre, std::string pasword);
 };
 
 

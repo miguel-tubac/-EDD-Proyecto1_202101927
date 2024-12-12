@@ -47,6 +47,11 @@ class MatrizDispersa {
     //Funcion para saber si el nodo esta mas abajo
     bool masAbajo(NodoMatriz *cabeV, std::string cabV);
     bool masDerecho(NodoMatriz *cabeH, std::string cabH);
+
+    //Funcion para saber el nodo del usuario
+    bool existePaswordUser(std::string username, std::string password);
+
+    std::string getNombre();
 };
 
 

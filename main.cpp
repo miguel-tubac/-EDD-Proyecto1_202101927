@@ -129,7 +129,8 @@ void menu_activos() {
     string descripcion = "";
     string ID = "";
 
-    cout << "Ingresa el nombre de Activo: ";
+    cin.ignore();//Limpiamos el bufer
+    cout << "\nIngresa el nombre de Activo: ";
     std::getline(cin, nombreAct);
     cout << "Ingresa la descripcion del Activo: ";
     std::getline(cin, descripcion);
@@ -146,7 +147,7 @@ void menu_activos() {
     nuevo->insertar(ID, activoNuevo); //Esta es la forma correcta
     //nuevo->insertar(std::string ID, Activos *nuevoAct);
     nuevo->insertar(10);
-
+    cout << "Este es el ID: " << ID << endl;
 }
 
 
@@ -168,9 +169,9 @@ void menu_user() {
 
         switch(opcion) {
             case 1:
-                cout << "Registrar Usuario..." << endl;
-            registrar_usuario();
-            break;
+                cout << "Agregar Activo..." << endl;
+                menu_activos();
+                break;
             case 2:
                 cout << "Reporte Matriz Dispersa..." << endl;
             break;

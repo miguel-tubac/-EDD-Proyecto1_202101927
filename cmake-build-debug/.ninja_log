@@ -7,3 +7,13 @@
 42	701	7558245203395197	CMakeFiles/Proyecto_1.dir/src/Clases/Usuarios.cpp.obj	6f3c8a7a8bad6d13
 52	165	7558245203490457	CMakeFiles/Proyecto_1.dir/src/Arbol/Nodo_ABL.cpp.obj	a9143dcbf5c1a310
 62	187	7558245203588560	CMakeFiles/Proyecto_1.dir/src/Arbol/ClassABL.cpp.obj	f62ee9187d76fd9f
+16	538	7558280422012545	CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.obj	9608bcbd21c4eeea
+6	696	7558280421916829	CMakeFiles/Proyecto_1.dir/main.cpp.obj	c25dcafd81a77bd7
+5	555	7558282105256073	CMakeFiles/Proyecto_1.dir/src/MatrizDispersa/MatrizDispersa.cpp.obj	5f4ac8fc798b993
+556	687	7558282110763225	Proyecto_1.exe	fb89486fab534fdd
+6	562	7558284010464472	CMakeFiles/Proyecto_1.dir/main.cpp.obj	c25dcafd81a77bd7
+563	679	7558284016033140	Proyecto_1.exe	fb89486fab534fdd
+6	567	7558285595442104	CMakeFiles/Proyecto_1.dir/main.cpp.obj	c25dcafd81a77bd7
+567	697	7558285601058605	Proyecto_1.exe	fb89486fab534fdd
+6	575	7558285974655429	CMakeFiles/Proyecto_1.dir/main.cpp.obj	c25dcafd81a77bd7
+575	685	7558285980345473	Proyecto_1.exe	fb89486fab534fdd

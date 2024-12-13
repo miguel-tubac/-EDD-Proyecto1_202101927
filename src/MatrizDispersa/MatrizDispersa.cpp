@@ -12,7 +12,7 @@ MatrizDispersa::MatrizDispersa() {
 }
 
 std::string nombre_usuario = "";
-Usuarios *usar = nullptr;
+Usuarios *usar;
 //Estos son los metodos que declare en la cabecera .h
 
 NodoMatriz *MatrizDispersa::existecabeHorizontal(std::string cabecera) {
@@ -310,7 +310,7 @@ std::string MatrizDispersa::getNombre() {
 }
 
 
-Usuarios MatrizDispersa::getUsuario() {
+Usuarios *MatrizDispersa::getUsuario() {
     return usar;
 }
 

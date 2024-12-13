@@ -12,6 +12,7 @@ MatrizDispersa::MatrizDispersa() {
 }
 
 std::string nombre_usuario = "";
+Usuarios *usar = nullptr;
 //Estos son los metodos que declare en la cabecera .h
 
 NodoMatriz *MatrizDispersa::existecabeHorizontal(std::string cabecera) {
@@ -292,6 +293,7 @@ bool MatrizDispersa::existePaswordUser(std::string username, std::string passwor
                 nodoAux->valor->usuar == username &&
                 nodoAux->valor->pasword == password) {
                 nombre_usuario = nodoAux->valor->nombre;
+                usar = nodoAux->valor;
                 return true; // Usuario y contraseña encontrados.
                 }
             nodoAux = nodoAux->siguiente;
@@ -308,6 +310,8 @@ std::string MatrizDispersa::getNombre() {
 }
 
 
-
+Usuarios MatrizDispersa::getUsuario() {
+    return usar;
+}
 
 

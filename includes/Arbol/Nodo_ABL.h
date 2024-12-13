@@ -5,7 +5,7 @@
 #ifndef NODO_ABL_H
 #define NODO_ABL_H
 
-/*
+
 class Nodo_AVL {
 public:
 
@@ -15,7 +15,7 @@ public:
     Nodo_AVL *der;
 
     Nodo_AVL(int valor);
-};*/
+};
 
 
 //Faltan los geters y seters

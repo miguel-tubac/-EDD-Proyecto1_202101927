@@ -5,20 +5,29 @@
 #ifndef CLASSABL_H
 #define CLASSABL_H
 
-#include "NodeAVL.h"
 #include "Nodo_ABL.h"
-/*
+
 class ClassABL {
     private:
-        void insertar(int valor, Nodo_AVL* &raiz);
+        void insertar(Nodo_AVL *valor, Nodo_AVL* &raiz);
     public:
 
         Nodo_AVL *raiz;
 
-        ClassABL();
+        ClassABL();//Constructor
 
-        int alturaMax (Nodo_AVL *node);
-        int factEquilibrio(Nodo_AVL *node); // altura hijo derecho - altura hijo izquierdo.
-};*/
+        void insertar(int valor);
+
+        int alturaMax (Nodo_AVL *nodo);
+        int factEquilibrio(Nodo_AVL *nodo); // altura hijo derecho - altura hijo izquierdo.
+
+        //Estas son las rotaciones simples
+        void rotacionIzq(Nodo_AVL *&nodo);
+        void rotacionDer(Nodo_AVL *&nodo);
+
+        //Estas son las rotaciones dobles
+        void rotacionDobleIzqDer(Nodo_AVL *&nodo);
+        void rotacionDobleDerIzq(Nodo_AVL *&nodo);
+};
 
 #endif //CLASSABL_H

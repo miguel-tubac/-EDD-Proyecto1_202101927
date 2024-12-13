@@ -13,4 +13,6 @@ add_executable(Proyecto_1 main.cpp
         includes/Arbol/Nodo_ABL.h
         src/Arbol/Nodo_ABL.cpp
         src/Arbol/ClassABL.cpp
-        includes/Arbol/ClassABL.h)
+        includes/Arbol/ClassABL.h
+        includes/Clases/Activos.h
+        src/Clases/Activos.cpp)

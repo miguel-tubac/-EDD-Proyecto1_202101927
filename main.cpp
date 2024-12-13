@@ -1,10 +1,15 @@
 #include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std; //Esto es para evitar colocar delante de cada variable std ::
 
 
 #include "includes/MatrizDispersa/MatrizDispersa.h"
 #include "includes/Clases/Usuarios.h"
+#include "includes/Arbol/ClassABL.h"
+#include "includes/Clases/Activos.h"
 
 
 MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris general
@@ -34,8 +39,12 @@ void registrar_usuario() {
     cout << "Ingresar Empresa: ";
     std::getline(cin, empresa);
 
+    //Se crea un arbol ABL vacillo para cada objeto de la matriz
+    ClassABL *nuevo = new ClassABL();
+    //nuevo->insertar(10);
+
     // Crear el objeto del usuario
-    Usuarios* userNuevo = new Usuarios(usuario, nombre, pasword);
+    Usuarios* userNuevo = new Usuarios(usuario, nombre, pasword, nuevo);
 
     // Insertar el usuario en la matriz dispersa
     matrizGeneral->insertarValor(userNuevo, departamento, empresa);
@@ -96,13 +105,57 @@ void menu_admin() {
 }
 
 
+std::string generarCadenaAlfanumerica() {
+    const std::string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    std::string resultado;
+    std::srand(std::time(nullptr)); // Inicializar semilla del generador de números aleatorios
+
+    int longitud = 15;
+    for (int i = 0; i < longitud; ++i) {
+        int indiceAleatorio = std::rand() % caracteres.size(); // Índice aleatorio en el rango de caracteres
+        resultado += caracteres[indiceAleatorio];
+    }
+
+    return resultado;
+}
+
+
+
+//Este es el menu de agregar activo:
+void menu_activos() {
+    cout << "\n------------------------ Agregar Activo -----------------------" << endl;
+
+    string nombreAct = "";
+    string descripcion = "";
+    string ID = "";
+
+    cout << "Ingresa el nombre de Activo: ";
+    std::getline(cin, nombreAct);
+    cout << "Ingresa la descripcion del Activo: ";
+    std::getline(cin, descripcion);
+
+    ID = generarCadenaAlfanumerica();
+
+    //Aca se crea el objeto de activo que ira dentro del arbol
+    Activos *activoNuevo = new Activos(nombreAct, descripcion);
+
+    //Se obtiene el objeto Usuario
+    Usuarios *logeado = matrizGeneral->getUsuario();
+    //Se obtiene el ArbolABl del Usuario
+    ClassABL *nuevo = logeado->arbol;
+    nuevo->insertar(ID, activoNuevo); //Esta es la forma correcta
+    //nuevo->insertar(std::string ID, Activos *nuevoAct);
+    nuevo->insertar(10);
+
+}
+
 
 //Este es el menu del usuario
 void menu_user() {
     int opcion;
     name = matrizGeneral->getNombre();
     do {
-        cout << "\n------------------------ "<< name <<" -----------------------" << endl;
+        cout << "\n------------------------ Bienvenido: "<< name <<" -----------------------" << endl;
         cout << "1. Agregar Activo" << endl;
         cout << "2. Eliminar Activo" << endl;
         cout << "3. Modificar Activo" << endl;

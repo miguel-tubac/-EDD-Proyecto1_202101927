@@ -6,6 +6,7 @@
 #define MATRIZDISPERSA_H
 
 #include "NodoMatriz.h"
+#include "../Clases/Usuarios.h"
 
 class MatrizDispersa {
     public:
@@ -52,6 +53,7 @@ class MatrizDispersa {
     bool existePaswordUser(std::string username, std::string password);
 
     std::string getNombre();
+    Usuarios *getUsuario();
 };
 
 

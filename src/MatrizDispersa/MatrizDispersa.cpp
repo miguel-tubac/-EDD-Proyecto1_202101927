@@ -4,6 +4,8 @@
 #include "../../includes/MatrizDispersa/MatrizDispersa.h"
 
 #include <stddef.h>
+#include <fstream>
+#include <string>
 
 //Este es el constructor
 MatrizDispersa::MatrizDispersa() {
@@ -313,5 +315,90 @@ std::string MatrizDispersa::getNombre() {
 Usuarios *MatrizDispersa::getUsuario() {
     return usar;
 }
+
+
+void MatrizDispersa::generarGrafica(){
+    NodoMatriz* aux = vertical;
+    NodoMatriz* aux2 = nullptr;
+
+    std::string dot = "digraph MatrizDispersa {\n";
+    dot += "    node [shape=box];\n";
+
+    // Generar nodos para cabeceras verticales
+    dot += "    // Cabeceras verticales\n";
+    while (aux != nullptr) {
+        dot += "    \"" + aux->cabecera + "\" [group=1];\n";
+        aux = aux->abajo;
+    }
+
+    // Generar conexiones entre cabeceras verticales
+    aux = vertical;
+    dot += "    // Conexiones verticales\n";
+    while (aux != nullptr && aux->abajo != nullptr) {
+        dot += "    \"" + aux->cabecera + "\" -> \"" + aux->abajo->cabecera + "\";\n";
+        dot += "    \"" + aux->abajo->cabecera + "\" -> \"" + aux->cabecera + "\";\n";
+        aux = aux->abajo;
+    }
+
+    // Generar nodos para cabeceras horizontales
+    aux = horizontal;
+    dot += "    // Cabeceras horizontales\n";
+    while (aux != nullptr) {
+        dot += "    \"" + aux->cabecera + "\" [group=2];\n";
+        aux = aux->siguiente;
+    }
+
+    // Generar conexiones entre cabeceras horizontales
+    aux = horizontal;
+    dot += "    // Conexiones horizontales\n";
+    while (aux != nullptr && aux->siguiente != nullptr) {
+        dot += "    \"" + aux->cabecera + "\" -> \"" + aux->siguiente->cabecera + "\";\n";
+        dot += "    \"" + aux->siguiente->cabecera + "\" -> \"" + aux->cabecera + "\";\n";
+        aux = aux->siguiente;
+    }
+
+    // Recorrer filas y generar nodos y conexiones
+    aux = horizontal->abajo;
+    dot += "    // Filas\n";
+    while (aux != nullptr) {
+        NodoMatriz* auxFila = aux;
+        dot += "    {rank=same; \n";
+        while (auxFila != nullptr) {
+            if (auxFila->valor != nullptr) {
+                dot += "    \"" + auxFila->valor->usuar + "\" [label=\"" + auxFila->valor->usuar + "\"];\n";
+            } else {
+                dot += "    \"" + auxFila->cabecera + "\";\n";
+            }
+
+            if (auxFila->siguiente != nullptr) {
+                dot += "    \"" + auxFila->cabecera + "\" -> \"" + auxFila->siguiente->cabecera + "\";\n";
+                dot += "    \"" + auxFila->siguiente->cabecera + "\" -> \"" + auxFila->cabecera + "\";\n";
+            }
+            auxFila = auxFila->siguiente;
+        }
+        dot += "    }\n";
+        aux = aux->abajo;
+    }
+
+    dot += "}\n";
+
+    // Escribir el archivo DOT
+    std::ofstream file;
+    file.open("../src/Reportes/matriz.dot");
+
+    if (file.is_open()) {
+        file << dot;
+        file.close();
+    }
+
+    int resultado = std::system("dot -Tpng ../src/Reportes/matriz.dot -o ../src/Reportes/matriz.png");
+    if (resultado == 0) {
+        std::cout << "Imagen matriz.png generada exitosamente." << std::endl;
+    } else {
+        std::cerr << "Error al generar la imagen matriz.png" << std::endl;
+    }
+}
+
+
 
 

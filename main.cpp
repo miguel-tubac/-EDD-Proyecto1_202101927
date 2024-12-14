@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 
 using namespace std; //Esto es para evitar colocar delante de cada variable std ::
 
@@ -52,6 +53,7 @@ void registrar_usuario() {
 
 
 
+
 void menu_admin() {
     int opcion;
     do {
@@ -75,6 +77,7 @@ void menu_admin() {
                 break;
             case 2:
                 cout << "Reporte Matriz Dispersa..." << endl;
+                matrizGeneral->generarGrafica();
                 break;
             case 3:
                 cout << "Reporte Activos Disponibles de un Departamento..." << endl;

@@ -5,6 +5,7 @@
 
 NodoMatriz::NodoMatriz(std::string cabecera) {
     this->cabecera = cabecera;
+    this->valor = nullptr;
 
     this->siguiente = nullptr;
     this->anterior = nullptr;
@@ -20,6 +21,7 @@ NodoMatriz::NodoMatriz(std::string cabecera) {
 
 NodoMatriz::NodoMatriz(Usuarios* valor) {
     this->valor = valor;
+    this->cabecera = "";
 
     this->siguiente = nullptr;
     this->anterior = nullptr;

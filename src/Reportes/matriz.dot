@@ -1,0 +1,13 @@
+digraph MatrizDispersa {
+    node [shape=box];
+    // Cabeceras verticales
+    "Max" [group=1];
+    // Conexiones verticales
+    // Cabeceras horizontales
+    "Guatemala" [group=2];
+    // Conexiones horizontales
+    // Filas
+    {rank=same; 
+    "miguel" [label="miguel"];
+    }
+}

@@ -54,6 +54,8 @@ class MatrizDispersa {
 
     std::string getNombre();
     Usuarios *getUsuario();
+
+    void generarGrafica();
 };
 
 

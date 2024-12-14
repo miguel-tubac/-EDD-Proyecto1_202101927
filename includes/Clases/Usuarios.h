@@ -7,16 +7,16 @@
 
 #include <string>
 #include <iostream>
-#include "../Arbol/ClassABL.h"
+#include "../Arbol/ClassAVL.h"
 
 class Usuarios {
     public:
     std::string usuar;
     std::string nombre;
     std::string pasword;
-    ClassABL *arbol;
+    ClassAVL *arbol;
 
-    Usuarios(std::string usuar, std::string nombre, std::string pasword, ClassABL *arbol);
+    Usuarios(std::string usuar, std::string nombre, std::string pasword, ClassAVL *arbol);
 };
 
 

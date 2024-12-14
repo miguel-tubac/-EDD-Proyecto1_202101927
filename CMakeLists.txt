@@ -10,9 +10,9 @@ add_executable(Proyecto_1 main.cpp
         src/MatrizDispersa/MatrizDispersa.cpp
         includes/Clases/Usuarios.h
         src/Clases/Usuarios.cpp
-        includes/Arbol/Nodo_ABL.h
-        src/Arbol/Nodo_ABL.cpp
-        src/Arbol/ClassABL.cpp
-        includes/Arbol/ClassABL.h
+        includes/Arbol/Nodo_AVL.h
+        src/Arbol/Nodo_AVL.cpp
+        src/Arbol/ClassAVL.cpp
+        includes/Arbol/ClassAVL.h
         includes/Clases/Activos.h
         src/Clases/Activos.cpp)

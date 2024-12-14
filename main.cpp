@@ -8,7 +8,7 @@ using namespace std; //Esto es para evitar colocar delante de cada variable std 
 
 #include "includes/MatrizDispersa/MatrizDispersa.h"
 #include "includes/Clases/Usuarios.h"
-#include "includes/Arbol/ClassABL.h"
+#include "includes/Arbol/ClassAVL.h"
 #include "includes/Clases/Activos.h"
 
 
@@ -40,7 +40,7 @@ void registrar_usuario() {
     std::getline(cin, empresa);
 
     //Se crea un arbol ABL vacillo para cada objeto de la matriz
-    ClassABL *nuevo = new ClassABL();
+    ClassAVL *nuevo = new ClassAVL();
     //nuevo->insertar(10);
 
     // Crear el objeto del usuario
@@ -143,10 +143,9 @@ void menu_activos() {
     //Se obtiene el objeto Usuario
     Usuarios *logeado = matrizGeneral->getUsuario();
     //Se obtiene el ArbolABl del Usuario
-    ClassABL *nuevo = logeado->arbol;
+    ClassAVL *nuevo = logeado->arbol;
     nuevo->insertar(ID, activoNuevo); //Esta es la forma correcta
-    //nuevo->insertar(std::string ID, Activos *nuevoAct);
-    nuevo->insertar(10);
+
     cout << "Este es el ID: " << ID << endl;
 }
 

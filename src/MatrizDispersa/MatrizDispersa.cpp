@@ -162,8 +162,27 @@ void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, s
         while (auxVV != nullptr) {
             if (auxVV->valor == nullptr && auxVV->cabecera == cabVertical) {
                 //Aca se tiene que agregar la opcion de al frente o atras
-                insertarFrente(valor, auxHH);
-                cout <<" Se incerto al frente";
+                int opcion;
+                bool recorrido = true;
+                do {
+                    std::cout << "En esta posicion ya existe un usuario, elija donde Insertar al nuevo usuario:" << std::endl;
+                    std::cout << "1. Adlante del Usuario" << std::endl;
+                    std::cout << "2. Atras del Usuario" << std::endl;
+                    std::cout << "\nIngrese una opcion: ";
+                    std::cin >> opcion;
+                    switch (opcion) {
+                        case 1:
+                            insertarFrente(valor, auxHH);
+                            recorrido = false;
+                            break;
+                        case 2:
+                            insertarAtras(valor, auxHH);
+                            recorrido = false;
+                            break;
+                        default:
+                            std::cout << "Opcion incorrecto, intente de nuevo" << std::endl;
+                    }
+                }while (recorrido);
                 return;
             }
             auxVV = auxVV->anterior;
@@ -354,19 +373,23 @@ bool MatrizDispersa::existePaswordUser(std::string username, std::string passwor
     }
 
     // Recorremos las cabeceras horizontales.
-    NodoMatriz *cabeHorizontalAux = horizontal;
+    NodoMatriz *cabeHorizontalAux = horizontal->abajo;
+    NodoMatriz *cabeVerticalAux = horizontal->siguiente;
     while (cabeHorizontalAux != nullptr) {
         // Recorremos cada nodo en la fila correspondiente.
         NodoMatriz *nodoAux = cabeHorizontalAux;
         while (nodoAux != nullptr) {
-            if (nodoAux->valor != nullptr &&
-                nodoAux->valor->usuar == username &&
-                nodoAux->valor->pasword == password) {
+            if (nodoAux->valor != nullptr && nodoAux->valor->usuar == username && nodoAux->valor->pasword == password) {
                 nombre_usuario = nodoAux->valor->nombre;
                 usar = nodoAux->valor;
                 return true; // Usuario y contraseña encontrados.
                 }
-            nodoAux = nodoAux->siguiente;
+            nodoAux = nodoAux->atras;
+        }
+
+        if (cabeHorizontalAux->abajo ==  nullptr && cabeVerticalAux != nullptr) {
+            cabeHorizontalAux = cabeVerticalAux;
+            cabeVerticalAux = cabeVerticalAux->siguiente;
         }
         cabeHorizontalAux = cabeHorizontalAux->abajo;
     }

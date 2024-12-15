@@ -178,6 +178,21 @@ void eliminar_activos() {
     logeado->arbol->eliminar(idActivo);
 }
 
+void modificar_activos() {
+    string idActivo;
+    string nuevaDescripcion;
+    cout << "\n------------------------ Modificar Activo -----------------------" << endl;
+    //Se obtiene el objeto Usuario
+    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado->arbol->mostrarActivos();
+    cout << "\nIngresa el ID de Activo: ";
+    cin >> idActivo;
+    cin.ignore();//Limpiamos el bufer
+    cout << "Ingresa la nueva descripcion del Activo: ";
+    std::getline(cin, nuevaDescripcion);
+    logeado->arbol->modificarActivo(idActivo, nuevaDescripcion);
+}
+
 
 //Este es el menu del usuario
 void menu_user() {
@@ -206,6 +221,7 @@ void menu_user() {
             break;
             case 3:
                 cout << "Modificar Activo..." << endl;
+                modificar_activos();
             break;
             case 4:
                 cout << "Rentar Activo..." << endl;

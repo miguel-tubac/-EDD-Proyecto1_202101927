@@ -228,3 +228,41 @@ void ClassAVL::mostrarActivos(Nodo_AVL* nodo) {
     std::cout << "ID: " << nodo->id << " ; Nombre: "<< nodo->activo->nombre <<std::endl; // Muestra el id del nodo actual
     mostrarActivos(nodo->der); // Visita el subárbol derecho
 }
+
+
+Nodo_AVL* ClassAVL::buscar(std::string id) {
+    return buscar(id, this->raiz);
+}
+
+Nodo_AVL* ClassAVL::buscar(std::string id, Nodo_AVL* nodo) {
+    if (nodo == nullptr) {
+        return nullptr; // Caso base: si el nodo es nulo, no se encontró el ID
+    }
+
+    if (id == nodo->id) {
+        return nodo; // Se encontró el nodo con el ID
+    }
+
+    if (id < nodo->id) {
+        return buscar(id, nodo->izq); // Buscar en el subárbol izquierdo
+    } else {
+        return buscar(id, nodo->der); // Buscar en el subárbol derecho
+    }
+}
+
+
+void ClassAVL::modificarActivo(std::string idActivo, std::string nuevaDescripcion) {
+    Nodo_AVL *aux = buscar(idActivo, this->raiz);
+    if (aux != nullptr) {
+        aux->activo->descripcion = nuevaDescripcion;
+
+        std::cout <<"\nActivo Modificado :"<< std::endl;
+        std::cout << "ID: "<< aux->id << std::endl;
+        std::cout << "Nombre: "<< aux->activo->nombre << std::endl;
+        std::cout << "Descripcion: "<< aux->activo->descripcion << std::endl;
+        return;
+    }
+    std::cout << "El ID: " + idActivo +" no existe en el arbol" << std::endl;
+}
+
+

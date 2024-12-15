@@ -13,6 +13,7 @@ class ClassAVL {
         void insertar(Nodo_AVL *valor, Nodo_AVL* &raiz);
         void eliminar(std::string id, Nodo_AVL *&raiz);
         void mostrarActivos(Nodo_AVL* nodo);
+        Nodo_AVL* buscar(std::string id, Nodo_AVL* nodo);
     public:
 
         Nodo_AVL *raiz;
@@ -42,6 +43,10 @@ class ClassAVL {
         bool esHoja(Nodo_AVL *nodo);
 
         void mostrarActivos();
+
+        void modificarActivo(std::string idActivo, std::string nuevaDescripcion);
+
+        Nodo_AVL* buscar(std::string id);
 };
 
 #endif //CLASSABL_H

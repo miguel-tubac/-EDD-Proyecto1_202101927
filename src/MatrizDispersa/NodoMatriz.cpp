@@ -3,6 +3,10 @@
 //
 #include "../../includes/MatrizDispersa/NodoMatriz.h"
 
+// Inicialización de las variables estáticas
+int NodoMatriz::countGroup = 1;
+int NodoMatriz::countNode = 0;
+
 NodoMatriz::NodoMatriz(std::string cabecera) {
     this->cabecera = cabecera;
     this->valor = nullptr;
@@ -15,6 +19,10 @@ NodoMatriz::NodoMatriz(std::string cabecera) {
 
     this->adelante = nullptr;
     this->atras = nullptr;
+
+    // Incrementar el contador de nodos
+    id = ++countNode;
+    group = ++countGroup;
 }
 
 
@@ -31,6 +39,10 @@ NodoMatriz::NodoMatriz(Usuarios* valor) {
 
     this->adelante = nullptr;
     this->atras = nullptr;
+
+    // Incrementar el contador de nodos
+    id = ++countNode;
+    group = ++countGroup;
 }
 
 

@@ -1,13 +1,11 @@
-digraph MatrizDispersa {
-    node [shape=box];
-    // Cabeceras verticales
-    "Max" [group=1];
-    // Conexiones verticales
-    // Cabeceras horizontales
-    "Guatemala" [group=2];
-    // Conexiones horizontales
-    // Filas
-    {rank=same; 
-    "miguel" [label="miguel"];
-    }
+digraph G{
+{node[shape = box, group = a];
+"Max" ->
+{
+rank=same;
+node[shape = box, group = true];
+"Gatemala"
+node[shape = box, group = true];
+{rank=max;"miguel" ->"Max" ->"miguel" ->"Gatemala"
+}
 }

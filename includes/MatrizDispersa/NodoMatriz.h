@@ -23,6 +23,12 @@ class NodoMatriz {
     NodoMatriz *adelante;
     NodoMatriz *atras;
 
+    static int countGroup;
+    static int countNode;
+
+    int group;
+    int id;
+
     //Este es el constructor
     NodoMatriz(Usuarios* valor);
     NodoMatriz(std::string cabecera);

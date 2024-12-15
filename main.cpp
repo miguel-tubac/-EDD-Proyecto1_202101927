@@ -21,11 +21,11 @@ void registrar_usuario() {
     cout << "\n------------------------ Menu Administrador -----------------------" << endl;
     cout << "------------------------ 1. Registrar Usuario -----------------------" << endl;
 
-    string usuario;
-    string pasword;
-    string nombre;
-    string departamento;
-    string empresa;
+    string usuario = "";
+    string pasword = "";
+    string nombre = "";
+    string departamento = "";
+    string empresa= "";
 
     cout << "Ingresa Username: ";
     cin >> usuario;

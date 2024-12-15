@@ -3,6 +3,8 @@
 //
 #include "../../includes/MatrizDispersa/MatrizDispersa.h"
 
+using namespace std;
+
 #include <stddef.h>
 #include <fstream>
 #include <string>
@@ -316,71 +318,75 @@ Usuarios *MatrizDispersa::getUsuario() {
     return usar;
 }
 
-
+//(aux->valor != nullptr ? aux->valor->usuar : aux->cabecera)
 void MatrizDispersa::generarGrafica(){
-    NodoMatriz* aux = vertical;
-    NodoMatriz* aux2 = nullptr;
+	std::string dot = "digraph G {\n\tnode [shape=box width=1.2 ];\n";
 
-    std::string dot = "digraph MatrizDispersa {\n";
-    dot += "    node [shape=box];\n";
-
-    // Generar nodos para cabeceras verticales
-    dot += "    // Cabeceras verticales\n";
-    while (aux != nullptr) {
-        dot += "    \"" + aux->cabecera + "\" [group=1];\n";
-        aux = aux->abajo;
+    if (estaVacia()) {
+        dot += "};";
+        return;
     }
 
-    // Generar conexiones entre cabeceras verticales
-    aux = vertical;
-    dot += "    // Conexiones verticales\n";
-    while (aux != nullptr && aux->abajo != nullptr) {
-        dot += "    \"" + aux->cabecera + "\" -> \"" + aux->abajo->cabecera + "\";\n";
-        dot += "    \"" + aux->abajo->cabecera + "\" -> \"" + aux->cabecera + "\";\n";
-        aux = aux->abajo;
-    }
+    //Creacion de los nodos de los departamentos Horizontales
+    NodoMatriz *departamentos = this->horizontal;
+    NodoMatriz *users;
+    dot += "n0 -> n"+ std::to_string(departamentos->id) + " -> n0 [color=transparent];\n\t";
 
-    // Generar nodos para cabeceras horizontales
-    aux = horizontal;
-    dot += "    // Cabeceras horizontales\n";
-    while (aux != nullptr) {
-        dot += "    \"" + aux->cabecera + "\" [group=2];\n";
-        aux = aux->siguiente;
-    }
+    std::string ranks = "{ rank=same; n0; ";
+    while (departamentos != nullptr) {
+        dot += "n" + to_string( departamentos->id) + " [label=\"" + departamentos->cabecera + "\" group=" + to_string( departamentos->group) + "];\n\t";
 
-    // Generar conexiones entre cabeceras horizontales
-    aux = horizontal;
-    dot += "    // Conexiones horizontales\n";
-    while (aux != nullptr && aux->siguiente != nullptr) {
-        dot += "    \"" + aux->cabecera + "\" -> \"" + aux->siguiente->cabecera + "\";\n";
-        dot += "    \"" + aux->siguiente->cabecera + "\" -> \"" + aux->cabecera + "\";\n";
-        aux = aux->siguiente;
-    }
+        users = departamentos->abajo;
 
-    // Recorrer filas y generar nodos y conexiones
-    aux = horizontal->abajo;
-    dot += "    // Filas\n";
-    while (aux != nullptr) {
-        NodoMatriz* auxFila = aux;
-        dot += "    {rank=same; \n";
-        while (auxFila != nullptr) {
-            if (auxFila->valor != nullptr) {
-                dot += "    \"" + auxFila->valor->usuar + "\" [label=\"" + auxFila->valor->usuar + "\"];\n";
-            } else {
-                dot += "    \"" + auxFila->cabecera + "\";\n";
+        dot += "n" + to_string( departamentos->id) + " -> n" + to_string(users->id) + " -> n" + to_string(departamentos->id) + ";\n\t";
+        while (users != nullptr) {
+            dot += "n"+to_string(users->id) + " [label = \""+ users->valor->usuar + "\" group=" +to_string(users->group)+"];\n\t";
+
+            if (users->abajo != nullptr) {
+                dot += "n"+to_string(users->id) + " -> n" + to_string(users->abajo->id) + " -> n" + to_string(users->id) + ";\n\t";
             }
-
-            if (auxFila->siguiente != nullptr) {
-                dot += "    \"" + auxFila->cabecera + "\" -> \"" + auxFila->siguiente->cabecera + "\";\n";
-                dot += "    \"" + auxFila->siguiente->cabecera + "\" -> \"" + auxFila->cabecera + "\";\n";
-            }
-            auxFila = auxFila->siguiente;
+            users = users->abajo;
         }
-        dot += "    }\n";
-        aux = aux->abajo;
+
+        if (departamentos->siguiente != nullptr) {
+            dot += "n"+to_string(departamentos->id) + " -> n" +to_string(departamentos->siguiente->id) + " -> n" + to_string(departamentos->id)+ ";\n\t";
+        }
+
+        ranks += "n" + to_string(departamentos->id) + "; ";
+        departamentos = departamentos->siguiente;
     }
 
-    dot += "}\n";
+    ranks += "}\n\t";
+
+    //Recorremos las cabeceras verticales (Empresas)
+    NodoMatriz *company = this->vertical;
+    dot += "n0 -> n"+to_string(company->id) + " -> n0 [color=transparent];\n\t";
+
+    while (company != nullptr) {
+        ranks += "{ rank=same; ";
+        dot += "n"+to_string(company->id)+ " [label=\""+company->cabecera+ "\" group=" + to_string(company->group) + "];\n\t";
+        ranks += "n" + to_string(company->id) + "; ";
+
+        users = company->siguiente;
+        dot += "n"+to_string(company->id)+ " -> n"+to_string(users->id)+" -> n"+to_string(company->id)+";\n\t";
+        while (users != nullptr) {
+            dot += "n"+to_string(users->id)+" [label=\""+users->valor->usuar+"\" group="+to_string(users->group)+ "];\n\t";
+
+            if (users->siguiente != nullptr) {
+                dot += "n"+to_string(users->id) + " -> n" + to_string(users->siguiente->id) + " -> n" + to_string(users->id) + ";\n\t";
+            }
+
+            ranks += "n"+to_string(users->id) + "; ";
+            users = users->siguiente;
+        }
+
+    }
+
+
+
+
+
+    dot += "};";
 
     // Escribir el archivo DOT
     std::ofstream file;

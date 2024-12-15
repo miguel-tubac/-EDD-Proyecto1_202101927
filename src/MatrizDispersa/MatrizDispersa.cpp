@@ -146,6 +146,34 @@ void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, s
         return;
     }
 
+    // Verifica si ya existe un nodo en la intersección
+    NodoMatriz *auxHH = cabeHorizontal->abajo;
+    while (auxHH != nullptr) {
+        NodoMatriz *auxVV = auxHH; //Falta revisar en el nodo de frente y atras
+        NodoMatriz *aux3D = auxHH;
+        while (aux3D != nullptr) {
+            if (aux3D->valor->usuar == valor->usuar) {
+                std::cout << "Error: Ya existe un usuario en la posición ingresada" << std::endl;
+                return;
+            }
+            aux3D = aux3D->atras;
+        }
+
+        while (auxVV != nullptr) {
+            if (auxVV->valor == nullptr && auxVV->cabecera == cabVertical) {
+                //Aca se tiene que agregar la opcion de al frente o atras
+                insertarFrente(valor, auxHH);
+                cout <<" Se incerto al frente";
+                return;
+            }
+            auxVV = auxVV->anterior;
+        }
+
+        auxHH = auxHH->abajo;
+    }
+
+
+
     //Aca se validan cuado todas las cabeceras son existentes
     NodoMatriz *auxH = cabeHorizontal->abajo;
     NodoMatriz *userCabV;
@@ -186,6 +214,43 @@ void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, s
 
 
 }
+
+
+
+//Metodo para insertar atras de un usuario que ya este en una posición.
+void MatrizDispersa::insertarAtras(Usuarios* nuevoUsuario, NodoMatriz* usuarioActual) {
+    NodoMatriz* nuevo = new NodoMatriz(nuevoUsuario);
+
+    NodoMatriz* aux = usuarioActual;
+
+    while (aux->atras != nullptr) {
+        aux = aux->atras;
+    }
+
+    aux->atras = nuevo;
+    nuevo->adelante = aux;
+}
+
+void MatrizDispersa::insertarFrente(Usuarios* nuevoUsuario, NodoMatriz* usuarioActual) {
+    NodoMatriz* nuevo = new NodoMatriz(nuevoUsuario);
+
+    NodoMatriz* aux = usuarioActual;
+    NodoMatriz* aux2 = usuarioActual;
+
+
+    while (aux->atras != nullptr) {
+        aux = aux->atras;
+    }
+
+    aux->atras = nuevo;
+    nuevo->adelante = aux;
+
+    nuevo->valor = aux2->valor;
+    usuarioActual->valor = nuevoUsuario;
+
+}
+
+
 
 
 void MatrizDispersa::insertarAlfinal(NodoMatriz *valor, NodoMatriz *cabHorizontal, NodoMatriz *cabVertical) {

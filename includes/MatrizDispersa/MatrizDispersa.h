@@ -56,6 +56,10 @@ class MatrizDispersa {
     Usuarios *getUsuario();
 
     void generarGrafica();
+
+    void insertarAtras(Usuarios* nuevoUsuario, NodoMatriz* usuarioActual);
+    void insertarFrente(Usuarios* nuevoUsuario, NodoMatriz* usuarioActual);
+
 };
 
 

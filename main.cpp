@@ -17,6 +17,15 @@ MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris gener
 
 string name = "";
 
+//Para pasar a minusculas
+string to_lower(string s) {
+    std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) {
+        return std::tolower(c);
+    });
+    return s;
+}
+
+
 void registrar_usuario() {
     //cin.ignore();
     cout << "\n------------------------ Menu Administrador -----------------------" << endl;
@@ -40,6 +49,10 @@ void registrar_usuario() {
     std::getline(cin, departamento);
     cout << "Ingresar Empresa: ";
     std::getline(cin, empresa);
+
+    //Conversion a minusculas
+    departamento = to_lower(departamento);
+    empresa = to_lower(empresa);
 
     //Se crea un arbol ABL vacillo para cada objeto de la matriz
     ClassAVL *nuevo = new ClassAVL();

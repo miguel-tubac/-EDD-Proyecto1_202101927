@@ -134,6 +134,11 @@ void ClassAVL::eliminar(std::string id, Nodo_AVL *&nodo) {
         return;
     }
 
+    if (nodo == nullptr) {
+        std::cout << "El ID: " + id + " no existe en el árbol" << std::endl;
+        return;
+    }
+
     if (id == raiz->id) {//Este es el caso de eliminar la raiz
         if (esHoja(raiz)) { //Esto es cuando eliminamos una hoja
             std::cout << "\nActivo Eliminado;" << std::endl;

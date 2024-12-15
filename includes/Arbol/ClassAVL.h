@@ -14,6 +14,7 @@ class ClassAVL {
         void eliminar(std::string id, Nodo_AVL *&raiz);
         void mostrarActivos(Nodo_AVL* nodo);
         Nodo_AVL* buscar(std::string id, Nodo_AVL* nodo);
+        void mostrarActivosConTiempo(Nodo_AVL* nodo);
     public:
 
         Nodo_AVL *raiz;
@@ -47,6 +48,10 @@ class ClassAVL {
         void modificarActivo(std::string idActivo, std::string nuevaDescripcion);
 
         Nodo_AVL* buscar(std::string id);
+
+        void mostrarActivosConTiempo();
+
+        void modificarRentaActivo(std::string idActivo, int tiemporenta);
 };
 
 #endif //CLASSABL_H

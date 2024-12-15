@@ -14,6 +14,8 @@ public:
     std::string id;
     Activos *activo;
 
+    int tiempoRenta;
+
     int factorEq;
     Nodo_AVL *izq;
     Nodo_AVL *der;

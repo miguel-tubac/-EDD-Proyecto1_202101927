@@ -173,7 +173,7 @@ void eliminar_activos() {
     //Se obtiene el objeto Usuario
     Usuarios *logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivos();
-    cout << "\nIngresa el ID de Activo: ";
+    cout << "\nIngresa el ID del Activo: ";
     cin >> idActivo;
     logeado->arbol->eliminar(idActivo);
 }
@@ -185,12 +185,27 @@ void modificar_activos() {
     //Se obtiene el objeto Usuario
     Usuarios *logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivos();
-    cout << "\nIngresa el ID de Activo: ";
+    cout << "\nIngresa el ID del Activo: ";
     cin >> idActivo;
     cin.ignore();//Limpiamos el bufer
     cout << "Ingresa la nueva descripcion del Activo: ";
     std::getline(cin, nuevaDescripcion);
     logeado->arbol->modificarActivo(idActivo, nuevaDescripcion);
+}
+
+
+void retar_activos() {
+    string idActivo;
+    int tiemporenta;
+    cout << "\n------------------------ Rentar Activo -----------------------" << endl;
+    //Se obtiene el objeto Usuario
+    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado->arbol->mostrarActivosConTiempo();
+    cout << "\nIngresa el ID del Activo a Rentar: ";
+    cin >> idActivo;
+    cout << "Ingresar los Días por Rentar: ";
+    cin >> tiemporenta;
+    logeado->arbol->modificarRentaActivo(idActivo, tiemporenta);
 }
 
 
@@ -225,6 +240,7 @@ void menu_user() {
             break;
             case 4:
                 cout << "Rentar Activo..." << endl;
+                retar_activos();
             break;
             case 5:
                 cout << "Reporte Transacciones..." << endl;

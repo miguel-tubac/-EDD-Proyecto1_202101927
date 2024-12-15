@@ -9,5 +9,6 @@ Nodo_AVL::Nodo_AVL(std::string id,Activos *activo) {
     this->izq = nullptr;
     this->der = nullptr;
     this->factorEq = 0; //Inicializamos el factor de equilibro a cero ya que es el valor estandar
+    this->tiempoRenta = 0;
 }
 

@@ -136,17 +136,29 @@ void ClassAVL::eliminar(std::string id, Nodo_AVL *&nodo) {
 
     if (id == raiz->id) {//Este es el caso de eliminar la raiz
         if (esHoja(raiz)) { //Esto es cuando eliminamos una hoja
+            std::cout << "\nActivo Eliminado;" << std::endl;
+            std::cout << "ID: "<< raiz->id << std::endl;
+            std::cout << "Nombre: "<< raiz->activo->nombre << std::endl;
+            std::cout << "Descripcion: "<< raiz->activo->descripcion << std::endl;
             raiz = nullptr;
             return;
         }
 
         //Ahora cuando la raiz no es una hoja
         if (raiz->izq == nullptr) {
+            std::cout << "\nActivo Eliminado;" << std::endl;
+            std::cout << "ID: "<< raiz->id << std::endl;
+            std::cout << "Nombre: "<< raiz->activo->nombre << std::endl;
+            std::cout << "Descripcion: "<< raiz->activo->descripcion << std::endl;
             raiz = raiz->der;
             return;
         }
 
         if (raiz->der == nullptr) {
+            std::cout << "\nActivo Eliminado;" << std::endl;
+            std::cout << "ID: "<< raiz->id << std::endl;
+            std::cout << "Nombre: "<< raiz->activo->nombre << std::endl;
+            std::cout << "Descripcion: "<< raiz->activo->descripcion << std::endl;
             raiz = raiz->izq;
             return;
         }
@@ -202,4 +214,17 @@ bool ClassAVL::esHoja(Nodo_AVL* nodo) {
     return false;
 }
 
+void ClassAVL::mostrarActivos() {
+    mostrarActivos(this->raiz);
+}
 
+void ClassAVL::mostrarActivos(Nodo_AVL* nodo) {
+    if (nodo == nullptr) {
+        return; // Caso base: si el nodo es nulo, no hacemos nada
+    }
+
+    // Recorrido inorden: izquierda, nodo, derecha
+    mostrarActivos(nodo->izq); // Visita el subárbol izquierdo
+    std::cout << "ID: " << nodo->id << " ; Nombre: "<< nodo->activo->nombre <<std::endl; // Muestra el id del nodo actual
+    mostrarActivos(nodo->der); // Visita el subárbol derecho
+}

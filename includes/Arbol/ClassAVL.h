@@ -12,6 +12,7 @@ class ClassAVL {
     private:
         void insertar(Nodo_AVL *valor, Nodo_AVL* &raiz);
         void eliminar(std::string id, Nodo_AVL *&raiz);
+        void mostrarActivos(Nodo_AVL* nodo);
     public:
 
         Nodo_AVL *raiz;
@@ -39,6 +40,8 @@ class ClassAVL {
 
         //Esto es para saber si es una hoja el nodo
         bool esHoja(Nodo_AVL *nodo);
+
+        void mostrarActivos();
 };
 
 #endif //CLASSABL_H

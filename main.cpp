@@ -163,7 +163,19 @@ void menu_activos() {
     ClassAVL *nuevo = logeado->arbol;
     nuevo->insertar(ID, activoNuevo); //Esta es la forma correcta
 
-    cout << "Este es el ID: " << ID << endl;
+    //cout << "Este es el ID: " << ID << endl;
+}
+
+
+void eliminar_activos() {
+    string idActivo;
+    cout << "\n------------------------ Eliminar Activo -----------------------" << endl;
+    //Se obtiene el objeto Usuario
+    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado->arbol->mostrarActivos();
+    cout << "\nIngresa el ID de Activo: ";
+    cin >> idActivo;
+    logeado->arbol->eliminar(idActivo);
 }
 
 
@@ -189,13 +201,14 @@ void menu_user() {
                 menu_activos();
                 break;
             case 2:
-                cout << "Reporte Matriz Dispersa..." << endl;
+                cout << "Eliminar Activo..." << endl;
+                eliminar_activos();
             break;
             case 3:
-                cout << "Reporte Activos Disponibles de un Departamento..." << endl;
+                cout << "Modificar Activo..." << endl;
             break;
             case 4:
-                cout << "Reporte Activos Disponibles de una Empresa..." << endl;
+                cout << "Rentar Activo..." << endl;
             break;
             case 5:
                 cout << "Reporte Transacciones..." << endl;

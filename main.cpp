@@ -208,6 +208,27 @@ void retar_activos() {
     logeado->arbol->modificarRentaActivo(idActivo, tiemporenta);
 }
 
+void retornar_activos() {
+    string idActivo;
+    cout << "\n------------------------ Devolucion de Activo -----------------------" << endl;
+    //Se obtiene el objeto Usuario
+    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado->arbol->mostrarActivosRentados();
+    cout << "\nIngresa el ID del Activo a Devolver: ";
+    cin >> idActivo;
+    logeado->arbol->modificarDevolucionActivo(idActivo);
+}
+
+
+void mostrar_activos_Rentados() {
+    cout << "\n------------------------ Lista de Activos Rentados -----------------------" << endl;
+    //Se obtiene el objeto Usuario
+    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado->arbol->mostrarActivosRentados();
+    cout << "\nPresione Enter para continuar..." << endl;
+    cin.ignore(); // Ignorar cualquier entrada previa
+    cin.get();    // Esperar hasta que el usuario presione "Enter"
+}
 
 //Este es el menu del usuario
 void menu_user() {
@@ -219,7 +240,7 @@ void menu_user() {
         cout << "2. Eliminar Activo" << endl;
         cout << "3. Modificar Activo" << endl;
         cout << "4. Rentar Activo" << endl;
-        cout << "5. Activos Rentados" << endl;
+        cout << "5. Devolucion de Activos Rentados" << endl;
         cout << "6. Mis Activos Rentados" << endl;
         cout << "7. Cerrar Sesion" << endl;
         cout << "\nIngrese una opcion: ";
@@ -243,10 +264,12 @@ void menu_user() {
                 retar_activos();
             break;
             case 5:
-                cout << "Reporte Transacciones..." << endl;
+                cout << "Devolucion de Activos Rentados..." << endl;
+                retornar_activos();
             break;
             case 6:
-                cout << "Reporte Activos de un Usuario..." << endl;
+                cout << "Mis Activos Rentados...\n" << endl;
+                mostrar_activos_Rentados();
             break;
             case 7:
                 cout << "....Finalizando Sesion....." << endl;

@@ -299,5 +299,40 @@ void ClassAVL::modificarRentaActivo(std::string idActivo, int tiemporenta) {
     std::cout << "El ID: " + idActivo +" no existe en el arbol" << std::endl;
 }
 
+//**********************************Esto me permite visualizar los activos que si esten rentados unicamente*********************
+void ClassAVL::mostrarActivosRentados() {
+    mostrarActivosRentados(this->raiz);
+}
+
+void ClassAVL::mostrarActivosRentados(Nodo_AVL *nodo) {
+    if (nodo == nullptr) {
+        return; // Caso base: si el nodo es nulo, no hacemos nada
+    }
+
+    // Recorrido inorden: izquierda, nodo, derecha
+    mostrarActivosRentados(nodo->izq); // Visita el subárbol izquierdo
+    //Unicamente muestra los que si estan rentados
+    if (nodo->tiempoRenta > 0) {
+        std::cout << "ID: " << nodo->id << " ; Nombre: "<< nodo->activo->nombre << " ; Tiempo de Renta = " << nodo->tiempoRenta << " dias;" <<std::endl;
+    }
+    mostrarActivosRentados(nodo->der); // Visita el subárbol derecho
+}
+
+
+//********************************Esto modifica los dias de renta a cero**********************************************************
+void ClassAVL::modificarDevolucionActivo(std::string idActivo) {
+    Nodo_AVL *aux = buscar(idActivo);
+    if (aux != nullptr) {
+        aux->tiempoRenta = 0;
+        std::cout <<"\nActivo Devuelto :"<< std::endl;
+        std::cout << "ID: "<< aux->id << std::endl;
+        std::cout << "Nombre: "<< aux->activo->nombre << std::endl;
+        std::cout << "Descripcion: "<< aux->activo->descripcion << std::endl;
+        std::cout << "Teimpo de Renta: "<< aux->tiempoRenta << std::endl;
+        return;
+    }
+    std::cout << "El ID: " + idActivo +" no existe en el arbol" << std::endl;
+}
+
 
 

@@ -5,21 +5,12 @@ digraph G {
 n0 -> n2 -> n0 [color=transparent];
 	n2 [label="guate" group=0];
 	n2 -> n1 -> n2;
-	n1 [label = "miguel1" group=0];
-	n2 -> n5 -> n2;
-	n5 [label="mixco" group=1];
-	n5 -> n4 -> n5;
-	n4 [label = "miguel3" group=1];
+	n1 [label = "miguel" group=0];
 	n0 -> n3 -> n0 [color=transparent];
 	n3 [label="max" group=0];
 	n3 -> n1 -> n3;
-	n1 [label="miguel1" group=0];
-	n3 -> n6 -> n3;
-	n6 [label="tecno" group=0];
-	n6 -> n4 -> n6;
-	n4 [label="miguel3" group=1];
-	{ rank=same; n0; n2; n5; }
+	n1 [label="miguel" group=0];
+	{ rank=same; n0; n2; }
 	{ rank=same; n3; n1; }
-	{ rank=same; n6; n4; }
 	
 }

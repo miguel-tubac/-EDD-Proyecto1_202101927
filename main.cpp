@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
+//#include <cstdlib>
 #include <ctime>
-#include <fstream>
+//#include <fstream>
 
 using namespace std; //Esto es para evitar colocar delante de cada variable std ::
 
@@ -18,6 +18,7 @@ MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris gener
 string name = "";
 
 void registrar_usuario() {
+    //cin.ignore();
     cout << "\n------------------------ Menu Administrador -----------------------" << endl;
     cout << "------------------------ 1. Registrar Usuario -----------------------" << endl;
 
@@ -128,9 +129,9 @@ std::string generarCadenaAlfanumerica() {
 void menu_activos() {
     cout << "\n------------------------ Agregar Activo -----------------------" << endl;
 
-    string nombreAct = "";
-    string descripcion = "";
-    string ID = "";
+    string nombreAct;
+    string descripcion;
+    string ID;
 
     cin.ignore();//Limpiamos el bufer
     cout << "\nIngresa el nombre de Activo: ";
@@ -214,7 +215,7 @@ void iniciar_sesion() {
     do {
         cout << "\n------------------------ Renta de Activos -----------------------" << endl;
         cout << "------------------------ 1. Iniciar Sesion -----------------------" << endl;
-        cout << "Ingrese el usuario: " ;
+        cout << "Ingrese el usuario: ";
         cin >> usuario;
         cout << "Ingrese la contrasena: ";
         cin >> contra;
@@ -242,11 +243,6 @@ void iniciar_sesion() {
 
 
 int main() {
-    /*
-     *Ejemplo de como insertar un valor en la matriz
-    MatrizDispersa *matriz = new MatrizDispersa();
-    matriz->insertarValor(5, 0, 0);*/
-
     int opcion;
     do {
         cout << "\n------------------------ Renta de Activos -----------------------" << endl;
@@ -254,6 +250,7 @@ int main() {
         cout << "2. Salir" << endl;
         cout << "Ingrese una opcion: ";
         cin >> opcion;
+        //cin.ignore();
 
         switch(opcion) {
             case 1:

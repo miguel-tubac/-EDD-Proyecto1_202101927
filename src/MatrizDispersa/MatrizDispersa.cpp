@@ -320,7 +320,10 @@ Usuarios *MatrizDispersa::getUsuario() {
 
 //(aux->valor != nullptr ? aux->valor->usuar : aux->cabecera)
 void MatrizDispersa::generarGrafica(){
-	std::string dot = "digraph G {\n\tnode [shape=box width=1.2 ];\n";
+	std::string dot = "digraph G {";
+    dot += "\n\tlabel=\"Matriz Dispersa\";";
+    dot += "\n\tlabelloc=\"t\";";
+    dot += "\n\tnode [shape=box width=1.2 ];\n";
 
     if (estaVacia()) {
         dot += "};";
@@ -380,13 +383,17 @@ void MatrizDispersa::generarGrafica(){
             users = users->siguiente;
         }
 
+        if (company->abajo != nullptr) {
+            dot += "n"+to_string(company->id) + " -> n" +to_string(company->abajo->id) + " -> n" + to_string(company->id)+ ";\n\t";
+        }
+
+        ranks += "}\n\t";
+        company = company->abajo;
     }
 
+    dot += ranks;
 
-
-
-
-    dot += "};";
+    dot += "\n}";
 
     // Escribir el archivo DOT
     std::ofstream file;

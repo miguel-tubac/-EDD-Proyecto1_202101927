@@ -1,11 +1,34 @@
-digraph G{
-{node[shape = box, group = a];
-"Max" ->
-{
-rank=same;
-node[shape = box, group = true];
-"Gatemala"
-node[shape = box, group = true];
-{rank=max;"miguel" ->"Max" ->"miguel" ->"Gatemala"
-}
+digraph G {
+	label="Matriz Dispersa";
+	labelloc="t";
+	node [shape=box width=1.2 ];
+n0 -> n3 -> n0 [color=transparent];
+	n3 [label="Guatemala" group=3];
+	n3 -> n2 -> n3;
+	n2 [label = "miguel" group=2];
+	n3 -> n6 -> n3;
+	n6 [label="asd" group=6];
+	n6 -> n5 -> n6;
+	n5 [label = "fasdf" group=5];
+	n6 -> n9 -> n6;
+	n9 [label="feaf" group=9];
+	n9 -> n8 -> n9;
+	n8 [label = "asfdas" group=8];
+	n0 -> n4 -> n0 [color=transparent];
+	n4 [label="Max" group=4];
+	n4 -> n2 -> n4;
+	n2 [label="miguel" group=2];
+	n4 -> n7 -> n4;
+	n7 [label="asdf" group=7];
+	n7 -> n5 -> n7;
+	n5 [label="fasdf" group=5];
+	n7 -> n10 -> n7;
+	n10 [label="asd" group=10];
+	n10 -> n8 -> n10;
+	n8 [label="asfdas" group=8];
+	{ rank=same; n0; n3; n6; n9; }
+	{ rank=same; n4; n2; }
+	{ rank=same; n7; n5; }
+	{ rank=same; n10; n8; }
+	
 }

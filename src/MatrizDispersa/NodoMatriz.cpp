@@ -5,7 +5,7 @@
 
 // Inicialización de las variables estáticas
 int NodoMatriz::countGroup = 1;
-int NodoMatriz::countNode = 0;
+int NodoMatriz::countNode = 1;
 
 NodoMatriz::NodoMatriz(std::string cabecera) {
     this->cabecera = cabecera;

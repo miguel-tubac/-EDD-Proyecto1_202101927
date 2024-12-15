@@ -4,8 +4,8 @@
 #include "../../includes/MatrizDispersa/NodoMatriz.h"
 
 // Inicialización de las variables estáticas
-int NodoMatriz::countGroup = 1;
-int NodoMatriz::countNode = 1;
+int NodoMatriz::countGroup = 0;
+int NodoMatriz::countNode = 0;
 
 NodoMatriz::NodoMatriz(std::string cabecera) {
     this->cabecera = cabecera;
@@ -22,7 +22,8 @@ NodoMatriz::NodoMatriz(std::string cabecera) {
 
     // Incrementar el contador de nodos
     id = ++countNode;
-    group = ++countGroup;
+    // Asignar grupo a este nodo
+    group = countGroup; // Puedes ajustar esto según cómo manejes los grupos
 }
 
 
@@ -42,7 +43,11 @@ NodoMatriz::NodoMatriz(Usuarios* valor) {
 
     // Incrementar el contador de nodos
     id = ++countNode;
-    group = ++countGroup;
+    // Asignar grupo a este nodo
+    group = countGroup; // Puedes ajustar esto según cómo manejes los grupos
 }
 
 
+void NodoMatriz::crearNuevoGrupo() {
+    ++countGroup; // Incrementar el contador de grupos
+}

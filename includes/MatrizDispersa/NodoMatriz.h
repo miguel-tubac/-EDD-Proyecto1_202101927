@@ -32,6 +32,8 @@ class NodoMatriz {
     //Este es el constructor
     NodoMatriz(Usuarios* valor);
     NodoMatriz(std::string cabecera);
+
+    static void crearNuevoGrupo();
 };
 
 

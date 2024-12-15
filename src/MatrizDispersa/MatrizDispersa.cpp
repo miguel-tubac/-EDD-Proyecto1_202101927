@@ -112,6 +112,7 @@ void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, s
         insertarAlfinal(usuarioNuevo, cabeHorizontal, cabeVertical);
 
         //Retornamos para finalizar el proceso
+        usuarioNuevo->crearNuevoGrupo();
         return;
     }
 
@@ -126,7 +127,7 @@ void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, s
 
         //Aca se generan las conexiones con la matriz
         insertarAlfinal(usuarioNuevo, cabeHorizontal, cabeVertical);
-
+        usuarioNuevo->crearNuevoGrupo();
         //Retornamos para finalizar el proceso
         return;
     }
@@ -318,7 +319,7 @@ Usuarios *MatrizDispersa::getUsuario() {
     return usar;
 }
 
-//(aux->valor != nullptr ? aux->valor->usuar : aux->cabecera)
+
 void MatrizDispersa::generarGrafica(){
 	std::string dot = "digraph G {";
     dot += "\n\tlabel=\"Matriz Dispersa\";";
@@ -367,7 +368,8 @@ void MatrizDispersa::generarGrafica(){
 
     while (company != nullptr) {
         ranks += "{ rank=same; ";
-        dot += "n"+to_string(company->id)+ " [label=\""+company->cabecera+ "\" group=" + to_string(company->group) + "];\n\t";
+        dot += "n"+to_string(company->id)+ " [label=\""+company->cabecera+ "\" group=0];\n\t";
+        //dot += "n"+to_string(company->id)+ " [label=\""+company->cabecera+ "\" group=" + to_string(company->group) + "];\n\t";
         ranks += "n" + to_string(company->id) + "; ";
 
         users = company->siguiente;

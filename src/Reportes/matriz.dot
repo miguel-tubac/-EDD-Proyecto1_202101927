@@ -2,33 +2,46 @@ digraph G {
 	label="Matriz Dispersa";
 	labelloc="t";
 	node [shape=box width=1.2 ];
-n0 -> n3 -> n0 [color=transparent];
-	n3 [label="Guatemala" group=3];
-	n3 -> n2 -> n3;
-	n2 [label = "miguel" group=2];
+n0 -> n2 -> n0 [color=transparent];
+	n2 [label="GUate" group=0];
+	n2 -> n1 -> n2;
+	n1 [label = "miguel" group=0];
+	n1 -> n10 -> n1;
+	n10 [label = "new" group=3];
+	n2 -> n5 -> n2;
+	n5 [label="Zacapa" group=1];
+	n5 -> n4 -> n5;
+	n4 [label = "carlos" group=1];
+	n5 -> n8 -> n5;
+	n8 [label="sdfg" group=2];
+	n8 -> n7 -> n8;
+	n7 [label = "dfjfdgf" group=2];
+	n8 -> n12 -> n8;
+	n12 [label="vbhj" group=3];
+	n12 -> n11 -> n12;
+	n11 [label = "lhjk" group=3];
+	n0 -> n3 -> n0 [color=transparent];
+	n3 [label="Max" group=0];
+	n3 -> n1 -> n3;
+	n1 [label="miguel" group=0];
 	n3 -> n6 -> n3;
-	n6 [label="asd" group=6];
-	n6 -> n5 -> n6;
-	n5 [label = "fasdf" group=5];
+	n6 [label="Derter" group=0];
+	n6 -> n10 -> n6;
+	n10 [label="new" group=3];
+	n10 -> n4 -> n10;
+	n4 [label="carlos" group=1];
 	n6 -> n9 -> n6;
-	n9 [label="feaf" group=9];
-	n9 -> n8 -> n9;
-	n8 [label = "asfdas" group=8];
-	n0 -> n4 -> n0 [color=transparent];
-	n4 [label="Max" group=4];
-	n4 -> n2 -> n4;
-	n2 [label="miguel" group=2];
-	n4 -> n7 -> n4;
-	n7 [label="asdf" group=7];
-	n7 -> n5 -> n7;
-	n5 [label="fasdf" group=5];
-	n7 -> n10 -> n7;
-	n10 [label="asd" group=10];
-	n10 -> n8 -> n10;
-	n8 [label="asfdas" group=8];
-	{ rank=same; n0; n3; n6; n9; }
-	{ rank=same; n4; n2; }
-	{ rank=same; n7; n5; }
-	{ rank=same; n10; n8; }
+	n9 [label="gsdfghjg" group=0];
+	n9 -> n7 -> n9;
+	n7 [label="dfjfdgf" group=2];
+	n9 -> n13 -> n9;
+	n13 [label="fghj" group=0];
+	n13 -> n11 -> n13;
+	n11 [label="lhjk" group=3];
+	{ rank=same; n0; n2; n5; n8; n12; }
+	{ rank=same; n3; n1; }
+	{ rank=same; n6; n10; n4; }
+	{ rank=same; n9; n7; }
+	{ rank=same; n13; n11; }
 	
 }

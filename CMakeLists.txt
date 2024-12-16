@@ -18,6 +18,6 @@ add_executable(Proyecto_1 main.cpp
         src/Clases/Activos.cpp
         includes/Clases/Transacciones.h
         src/Clases/Transacciones.cpp
-        includes/ListaDoble/ListaEnlazadaDoble.h
-        src/ListaDoble/ListaEnlazadaDoble.cpp
+        includes/ListaDobleCircular/ListaEnlazadaDobleCircu.h
+        src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp
 )

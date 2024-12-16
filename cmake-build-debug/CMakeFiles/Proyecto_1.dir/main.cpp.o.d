@@ -201,6 +201,6 @@ CMakeFiles/Proyecto_1.dir/main.cpp.o: \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Usuarios.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Arbol/ClassAVL.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Activos.h \
- /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/ListaDoble/ListaEnlazadaDoble.h \
- /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/ListaDoble/../Clases/Transacciones.h \
+ /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/ListaDobleCircular/ListaEnlazadaDobleCircu.h \
+ /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/ListaDobleCircular/../Clases/Transacciones.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Transacciones.h

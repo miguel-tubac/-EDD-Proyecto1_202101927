@@ -13,12 +13,12 @@ using namespace std; //Esto es para evitar colocar delante de cada variable std 
 #include "includes/Clases/Usuarios.h"
 #include "includes/Arbol/ClassAVL.h"
 #include "includes/Clases/Activos.h"
-#include "includes/ListaDoble/ListaEnlazadaDoble.h"
+#include "includes/ListaDobleCircular/ListaEnlazadaDobleCircu.h"
 #include "includes/Clases/Transacciones.h"
 
 
 MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris general
-ListaEnlazadaDoble *listaGeneral = new ListaEnlazadaDoble();
+ListaEnlazadaDobleCircu *listaGeneral = new ListaEnlazadaDobleCircu();
 
 //Son los datos del usuario logeado
 string name = "";
@@ -185,6 +185,24 @@ void reporte_activos_rentados_usuario() {
 
 }
 
+
+void ordenar_transacciones() {
+    int opcion = 0;
+    cout << "\n------------------------ Ordenar Transacciones -----------------------" << endl;
+    cout << "1. Acendente" << endl;
+    cout << "2. Decendente" << endl;
+    cout << "\nIngresar opcion: ";
+    cin >> opcion;
+
+    if (opcion == 1) {
+        listaGeneral->ordenarAscendente();
+        cout << "...La lista se Ordeno de manera Acendete Correctamnte..." << endl;
+    }else if (opcion == 2) {
+        listaGeneral->ordenarDesendente();
+        cout << "...La lista se Ordeno de manera Decendente Correctamnte..." << endl;
+    }
+}
+
 void menu_admin() {
     int opcion = 0;
     do {
@@ -205,37 +223,39 @@ void menu_admin() {
             switch(opcion) {
                 case 1:
                     cout << "Registrar Usuario..." << endl;
-                registrar_usuario();
-                break;
+                    registrar_usuario();
+                    break;
                 case 2:
                     cout << "Reporte Matriz Dispersa..." << endl;
-                matrizGeneral->generarGrafica();
-                break;
+                    matrizGeneral->generarGrafica();
+                    break;
                 case 3:
                     cout << "Reporte Activos Disponibles de un Departamento..." << endl;
                     reporte_activos_departamento();
-                break;
+                    break;
                 case 4:
                     cout << "Reporte Activos Disponibles de una Empresa..." << endl;
                     reporte_activos_empresa();
-                break;
+                    break;
                 case 5:
                     cout << "Reporte Transacciones..." << endl;
                     listaGeneral->graficar();
-                break;
+                    break;
                 case 6:
                     cout << "Reporte Activos de un Usuario..." << endl;
                     reporte_activos_usuario();
-                break;
+                    break;
                 case 7:
                     cout << "Activos rentados por un Usuario..." << endl;
                     reporte_activos_rentados_usuario();
-                break;
+                    break;
                 case 8:
                     cout << "Ordenar Transacciones" << endl;
+                    ordenar_transacciones();
+                    break;
                 case 9:
                     cout << "....Finalizando Sesion....." << endl;
-                break;
+                    break;
             }
         }catch (const exception& e) {
             cout << e.what() << endl;

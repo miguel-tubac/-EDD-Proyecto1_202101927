@@ -1,19 +1,77 @@
 digraph G { randir = LR;
-	label = "Lista Enlazada Doble";
+	label = Transacciones;
 	labelloc = "t";
 	fontsize = 20;
-"ID: MIECEvrouO4SaUV
-ID Activo: 07oU7Ukqr0ltDrN
+"ID: z746eqWWdikOFG0
+
+ID Activo: gAR806gPKQCbLJE
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 40"->
+"ID: xY7p95eGwrronO8
+
+ID Activo: VgeFK8fg2YX86uV
 Username: miguel
 Departamento: guate
 Empresa: max
 Fecha: 2024-12-16
-Teimpo renta: 50"
-"ID: MIECEvrouO4SaUV
-ID Activo: 07oU7Ukqr0ltDrN
+Teimpo renta: 10"->
+"ID: e7mebCaXevJ3BBo
+
+ID Activo: ZdbVaadzRZ8G9xc
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 30"->
+"ID: Wj8em01zioKTkua
+
+ID Activo: yfQ7zUay1x9lWen
 Username: miguel
 Departamento: guate
 Empresa: max
 Fecha: 2024-12-16
-Teimpo renta: 50"
+Teimpo renta: 20"->
+"ID: z746eqWWdikOFG0
+
+ID Activo: gAR806gPKQCbLJE
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 40"->
+"ID: Wj8em01zioKTkua
+
+ID Activo: yfQ7zUay1x9lWen
+Username: miguel
+Departamento: guate
+Empresa: max
+Fecha: 2024-12-16
+Teimpo renta: 20"->
+"ID: e7mebCaXevJ3BBo
+
+ID Activo: ZdbVaadzRZ8G9xc
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 30"->
+"ID: xY7p95eGwrronO8
+
+ID Activo: VgeFK8fg2YX86uV
+Username: miguel
+Departamento: guate
+Empresa: max
+Fecha: 2024-12-16
+Teimpo renta: 10"->
+"ID: z746eqWWdikOFG0
+
+ID Activo: gAR806gPKQCbLJE
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 40"
 }

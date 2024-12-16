@@ -273,29 +273,29 @@ src/Clases/Usuarios.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/Clases/Usuarios.cpp.s
 .PHONY : src/Clases/Usuarios.cpp.s
 
-src/ListaDoble/ListaEnlazadaDoble.o: src/ListaDoble/ListaEnlazadaDoble.cpp.o
-.PHONY : src/ListaDoble/ListaEnlazadaDoble.o
+src/ListaDobleCircular/ListaEnlazadaDobleCircu.o: src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.o
+.PHONY : src/ListaDobleCircular/ListaEnlazadaDobleCircu.o
 
 # target to build an object file
-src/ListaDoble/ListaEnlazadaDoble.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o
-.PHONY : src/ListaDoble/ListaEnlazadaDoble.cpp.o
+src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.o
+.PHONY : src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.o
 
-src/ListaDoble/ListaEnlazadaDoble.i: src/ListaDoble/ListaEnlazadaDoble.cpp.i
-.PHONY : src/ListaDoble/ListaEnlazadaDoble.i
+src/ListaDobleCircular/ListaEnlazadaDobleCircu.i: src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.i
+.PHONY : src/ListaDobleCircular/ListaEnlazadaDobleCircu.i
 
 # target to preprocess a source file
-src/ListaDoble/ListaEnlazadaDoble.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.i
-.PHONY : src/ListaDoble/ListaEnlazadaDoble.cpp.i
+src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.i
+.PHONY : src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.i
 
-src/ListaDoble/ListaEnlazadaDoble.s: src/ListaDoble/ListaEnlazadaDoble.cpp.s
-.PHONY : src/ListaDoble/ListaEnlazadaDoble.s
+src/ListaDobleCircular/ListaEnlazadaDobleCircu.s: src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.s
+.PHONY : src/ListaDobleCircular/ListaEnlazadaDobleCircu.s
 
 # target to generate assembly for a file
-src/ListaDoble/ListaEnlazadaDoble.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.s
-.PHONY : src/ListaDoble/ListaEnlazadaDoble.cpp.s
+src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.s
+.PHONY : src/ListaDobleCircular/ListaEnlazadaDobleCircu.cpp.s
 
 src/MatrizDispersa/MatrizDispersa.o: src/MatrizDispersa/MatrizDispersa.cpp.o
 .PHONY : src/MatrizDispersa/MatrizDispersa.o
@@ -372,9 +372,9 @@ help:
 	@echo "... src/Clases/Usuarios.o"
 	@echo "... src/Clases/Usuarios.i"
 	@echo "... src/Clases/Usuarios.s"
-	@echo "... src/ListaDoble/ListaEnlazadaDoble.o"
-	@echo "... src/ListaDoble/ListaEnlazadaDoble.i"
-	@echo "... src/ListaDoble/ListaEnlazadaDoble.s"
+	@echo "... src/ListaDobleCircular/ListaEnlazadaDobleCircu.o"
+	@echo "... src/ListaDobleCircular/ListaEnlazadaDobleCircu.i"
+	@echo "... src/ListaDobleCircular/ListaEnlazadaDobleCircu.s"
 	@echo "... src/MatrizDispersa/MatrizDispersa.o"
 	@echo "... src/MatrizDispersa/MatrizDispersa.i"
 	@echo "... src/MatrizDispersa/MatrizDispersa.s"

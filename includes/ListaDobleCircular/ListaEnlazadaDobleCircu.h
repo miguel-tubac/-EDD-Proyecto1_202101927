@@ -20,20 +20,16 @@ public:
 
 
 //Esta es la clase de la lista doble
-class ListaEnlazadaDoble {
+class ListaEnlazadaDobleCircu {
 private:
     Node3* inicio;
-    Node3* fin;
 
 public:
-    ListaEnlazadaDoble();
+    ListaEnlazadaDobleCircu();
     void agregar(std::string ID, Transacciones* transaccion);
-    bool isEmpty() const;
-    //void ordenar();
-    //int comparar(Pasajeros* p1, Pasajeros* p2) const;
-    //void buscarPasaporte(std::string numPasaporte);
+    void ordenarAscendente();
+    void ordenarDesendente();
     void graficar();
-    //void vaciar();
 };
 
 #endif //LISTAENLAZADADOBLE_H

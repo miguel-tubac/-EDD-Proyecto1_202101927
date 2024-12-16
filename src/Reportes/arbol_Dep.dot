@@ -1,9 +1,9 @@
 digraph AVLTree {
-	label="Arbol AVL del Departamento = mixco";
+	label="Arbol AVL del Departamento = guate";
     node [shape=circle];
-    "KMDqClazvaojcqW" [color= red, style=filled label="ID = KMDqClazvaojcqW\nNombre = miguel222"];
-    "KMDqClazvaojcqW" -> "CvwzmHDxER5KVUV";
-    "CvwzmHDxER5KVUV" [color= blue, style=filled label="ID = CvwzmHDxER5KVUV\nNombre = miguel22"];
-    "KMDqClazvaojcqW" -> "QTSCv0n4ZH54Wjh";
-    "QTSCv0n4ZH54Wjh" [color= blue, style=filled label="ID = QTSCv0n4ZH54Wjh\nNombre = miguel2"];
+    "ayKxRy8dDkSWZOb" [color= blue, style=filled label="ID = ayKxRy8dDkSWZOb\nNombre = Pelotas"];
+    "ayKxRy8dDkSWZOb" -> "LKgjQdq4gPGTE8t";
+    "LKgjQdq4gPGTE8t" [color= blue, style=filled label="ID = LKgjQdq4gPGTE8t\nNombre = Televisores"];
+    "ayKxRy8dDkSWZOb" -> "hBNnUvgpLZoyrh3";
+    "hBNnUvgpLZoyrh3" [color= blue, style=filled label="ID = hBNnUvgpLZoyrh3\nNombre = Relojes"];
 }

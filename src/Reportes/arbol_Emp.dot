@@ -1,16 +1,9 @@
 digraph AVLTree {
-	label="Arbol AVL de la empresa = tecno";
+	label="Arbol AVL de la empresa = tecno sa";
     node [shape=circle];
-    "Gc9k27s6VuHlX5F" [color= blue, style=filled label="ID = Gc9k27s6VuHlX5F\nNombre = miguel3"];
-    "Gc9k27s6VuHlX5F" -> "AblmXoY1SICPmor";
-    "AblmXoY1SICPmor" [color= blue, style=filled label="ID = AblmXoY1SICPmor\nNombre = miguel33"];
-    "Gc9k27s6VuHlX5F" -> "Pn2RKUmxdUpkTJE";
-    "Pn2RKUmxdUpkTJE" [color= red, style=filled label="ID = Pn2RKUmxdUpkTJE\nNombre = miguel333"];
-    "Pn2RKUmxdUpkTJE" -> "hCBzQGcfFpg3BJ2";
-    "hCBzQGcfFpg3BJ2" [color= blue, style=filled label="ID = hCBzQGcfFpg3BJ2\nNombre = miguel3333"];
-    "KMDqClazvaojcqW" [color= red, style=filled label="ID = KMDqClazvaojcqW\nNombre = miguel222"];
-    "KMDqClazvaojcqW" -> "CvwzmHDxER5KVUV";
-    "CvwzmHDxER5KVUV" [color= blue, style=filled label="ID = CvwzmHDxER5KVUV\nNombre = miguel22"];
-    "KMDqClazvaojcqW" -> "QTSCv0n4ZH54Wjh";
-    "QTSCv0n4ZH54Wjh" [color= blue, style=filled label="ID = QTSCv0n4ZH54Wjh\nNombre = miguel2"];
+    "NjxVtXWpepIYT8q" [color= blue, style=filled label="ID = NjxVtXWpepIYT8q\nNombre = Alfombras"];
+    "NjxVtXWpepIYT8q" -> "3IwfXJ5f312BVlk";
+    "3IwfXJ5f312BVlk" [color= blue, style=filled label="ID = 3IwfXJ5f312BVlk\nNombre = Laptops"];
+    "NjxVtXWpepIYT8q" -> "ayKxRy8dDkSWZOb";
+    "ayKxRy8dDkSWZOb" [color= blue, style=filled label="ID = ayKxRy8dDkSWZOb\nNombre = Cuadernos"];
 }

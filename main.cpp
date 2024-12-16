@@ -147,13 +147,10 @@ void reporte_activos_departamento() {
     string departamento;
     cout << "\n---------------- Reporte Activos Disponibles de un Departamento ---------------" << endl;
     cout << "\nIngresar nombre del Departamento: ";
-    cin >> departamento;
+    cin.ignore();
+    std::getline(cin, departamento);
     departamento = to_lower(departamento);
     matrizGeneral->generarGraficasDepartamento(departamento);
-
-    /*
-    logeado = matrizGeneral->getUsuario();
-    logeado->arbol->graficarArbol();*/
 }
 
 
@@ -161,7 +158,8 @@ void reporte_activos_empresa() {
     string empresa;
     cout << "\n---------------- Reporte Activos Disponibles de un Empresa ---------------" << endl;
     cout << "\nIngresar nombre de la Empresa: ";
-    cin >> empresa;
+    cin.ignore();
+    std::getline(cin, empresa);
     empresa = to_lower(empresa);
     matrizGeneral->generarGraficasEmpresa(empresa);
 }
@@ -479,6 +477,25 @@ void agregar_usuariosIniciales() {
     //Aca se incertan a la matriz dispersa
     Usuarios* userNuevo = new Usuarios("miguel", "Miguel Adrian", "1234", nuevo);
     matrizGeneral->insertarValor(userNuevo, "guate", "max");
+
+
+    //***********Aca va otro usuario***************
+    //Aqui va un activo ingresado
+    ClassAVL *nuevo2 = new ClassAVL();
+    Activos *activoNuevo4 = new Activos("Cuadernos", "Cuadernos Grandes.");
+    nuevo2->insertar(ID, activoNuevo4);
+    //Este es el segundo activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo5 = new Activos("Laptops", "Laptops de la marca Dell.");
+    nuevo2->insertar(ID, activoNuevo5);
+    //Este es el tercer activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo6 = new Activos("Alfombras", "Alfombras de color azul.");
+    nuevo2->insertar(ID, activoNuevo6);
+    //Aca se incertan a la matriz dispersa
+    Usuarios* userNuevo2 = new Usuarios("miguel2", "Tubac Miguel", "1234", nuevo2);
+    matrizGeneral->insertarValor(userNuevo2, "san juan", "tecno sa");
+
 }
 
 

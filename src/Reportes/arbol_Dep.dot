@@ -1,11 +1,9 @@
 digraph AVLTree {
 	label="Arbol AVL del Departamento = guate";
     node [shape=circle];
-    "CUwQpsWIgwAwYA8" [label="ID = CUwQpsWIgwAwYA8\nNombre = dddd"];
-    "CUwQpsWIgwAwYA8" -> "B2Ev7bWSjVvJpMC";
-    "B2Ev7bWSjVvJpMC" [label="ID = B2Ev7bWSjVvJpMC\nNombre = cccc"];
-    "CUwQpsWIgwAwYA8" -> "vu0h4EL0RNcVuKl";
-    "vu0h4EL0RNcVuKl" [label="ID = vu0h4EL0RNcVuKl\nNombre = bbbb"];
-    "vu0h4EL0RNcVuKl" -> "bzsUYnWAdZChITE";
-    "bzsUYnWAdZChITE" [label="ID = bzsUYnWAdZChITE\nNombre = aaaa"];
+    "I7dmdobTEUNC6Rv" [color= red, style=filled label="ID = I7dmdobTEUNC6Rv\nNombre = Televisores"];
+    "I7dmdobTEUNC6Rv" -> "51BIB6G1aLSxbvZ";
+    "51BIB6G1aLSxbvZ" [label="ID = 51BIB6G1aLSxbvZ\nNombre = Pelotas"];
+    "I7dmdobTEUNC6Rv" -> "boj5cTY01s6rJxo";
+    "boj5cTY01s6rJxo" [label="ID = boj5cTY01s6rJxo\nNombre = Relojes"];
 }

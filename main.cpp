@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-//#include <cstdlib>
-#include <ctime>
-//#include <fstream>
-#include <limits> // Para std::numeric_limits
+#include <cstdlib>
+#include <fstream>
+#include <limits>
+#include <random>
 
 using namespace std; //Esto es para evitar colocar delante de cada variable std ::
 
@@ -27,6 +27,8 @@ string to_lower(string s) {
     });
     return s;
 }
+
+
 
 
 int obtener_opcion() {
@@ -219,11 +221,16 @@ void menu_admin() {
 std::string generarCadenaAlfanumerica() {
     const std::string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     std::string resultado;
-    std::srand(std::time(nullptr)); // Inicializar semilla del generador de números aleatorios
 
     int longitud = 15;
+
+    // Configurar el generador aleatorio
+    std::random_device dispositivo;
+    std::mt19937 generador(dispositivo());
+    std::uniform_int_distribution<> distribucion(0, caracteres.size() - 1);
+
     for (int i = 0; i < longitud; ++i) {
-        int indiceAleatorio = std::rand() % caracteres.size(); // Índice aleatorio en el rango de caracteres
+        int indiceAleatorio = distribucion(generador); // Índice aleatorio en el rango de caracteres
         resultado += caracteres[indiceAleatorio];
     }
 
@@ -425,7 +432,29 @@ void iniciar_sesion() {
 }
 
 
+
+void agregar_usuariosIniciales() {
+    string ID = generarCadenaAlfanumerica();
+    //Aqui va un activo ingresado
+    ClassAVL *nuevo = new ClassAVL();
+    Activos *activoNuevo = new Activos("Televisores", "Son de 32 Pulgadas.");
+    nuevo->insertar(ID, activoNuevo);
+    //Este es el segundo activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo2 = new Activos("Relojes", "Relojes marca Rolex.");
+    nuevo->insertar(ID, activoNuevo2);
+    //Este es el tercer activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo3 = new Activos("Pelotas", "Pelotas de color rojo.");
+    nuevo->insertar(ID, activoNuevo3);
+    //Aca se incertan a la matriz dispersa
+    Usuarios* userNuevo = new Usuarios("miguel", "Miguel Adrian", "1234", nuevo);
+    matrizGeneral->insertarValor(userNuevo, "guate", "max");
+}
+
+
 int main() {
+    agregar_usuariosIniciales();
     int opcion = 0;
 
     do {

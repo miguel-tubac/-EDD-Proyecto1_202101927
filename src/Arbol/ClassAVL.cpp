@@ -438,11 +438,19 @@ void ClassAVL::graficarArbol() {
     }
 }
 
+
+//*******************************************Esto sirve para generar el dot del grafico del arbol***************************
 void ClassAVL::generarDot(Nodo_AVL* nodo, std::string& archivo) {
     if (nodo == nullptr) return;
 
     // Escribir el nodo actual
-    archivo += "    \"" + nodo->id + "\" [label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
+    if (nodo->tiempoRenta > 0) {
+        //Aqui rellenar a los nodos de color rojo    color= red, style=filled
+        archivo += "    \"" + nodo->id + "\" [color= red, style=filled label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
+    }else {
+        archivo += "    \"" + nodo->id + "\" [label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
+    }
+
 
     // Escribir la conexión hacia el hijo izquierdo (si existe)
     if (nodo->izq != nullptr) {

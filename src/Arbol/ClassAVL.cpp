@@ -327,36 +327,56 @@ void ClassAVL::modificarDevolucionActivo(std::string idActivo) {
 
 
 
-//***********************************Esto es para generar el grafico en Graphiz************************************************
-void ClassAVL::graficarArbol() {
+//***********************************Esto es para generar el grafico en Graphiz de Un solo usuario************************************************
+void ClassAVL::graficarArbol(std::string usuario) {
     std::string dot = "digraph AVLTree {\n";
-    dot += "\tlabel=\"Arbol AVL\";\n";
+    dot += "\tlabel=\"Arbol AVL de Activos del username = "+usuario+"\";\n";
     dot += "    node [shape=circle];\n";
 
     // Llamada recursiva para escribir los nodos y conexiones
-    generarDot(this->raiz, dot);
+    generarDot2(this->raiz, dot);
 
     dot += "}\n";
 
     // Escribir el archivo DOT
     std::ofstream file;
-    file.open("../src/Reportes/arbol.dot");
+    file.open("../src/Reportes/arbol_Usua.dot");
 
     if (file.is_open()) {
         file << dot;
         file.close();
     }
 
-    int resultado = std::system("dot -Tpng ../src/Reportes/arbol.dot -o ../src/Reportes/arbol.png");
+    int resultado = std::system("dot -Tpng ../src/Reportes/arbol_Usua.dot -o ../src/Reportes/arbol_Usua.png");
     if (resultado == 0) {
-        std::cout << "Imagen arbol.png generada exitosamente." << std::endl;
+        std::cout << "Imagen arbol_Usua.png generada exitosamente." << std::endl;
     } else {
-        std::cerr << "Error al generar la imagen arbol.png" << std::endl;
+        std::cerr << "Error al generar la imagen arbol_Usua.png" << std::endl;
     }
 }
 
 
-//*******************************************Esto sirve para generar el dot del grafico del arbol***************************
+//*************Esto sirve para generar el dot del grafico del arbol colocando todos los nodos iguales***************************
+void ClassAVL::generarDot2(Nodo_AVL* nodo, std::string& archivo) {
+    if (nodo == nullptr) return;
+
+    archivo += "    \"" + nodo->id + "\" [label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
+
+    // Escribir la conexión hacia el hijo izquierdo (si existe)
+    if (nodo->izq != nullptr) {
+        archivo += "    \"" + nodo->id + "\" -> \"" + nodo->izq->id + "\";\n";
+        generarDot(nodo->izq, archivo);
+    }
+
+    // Escribir la conexión hacia el hijo derecho (si existe)
+    if (nodo->der != nullptr) {
+        archivo += "    \"" + nodo->id + "\" -> \"" + nodo->der->id + "\";\n";
+        generarDot(nodo->der, archivo);
+    }
+}
+
+
+//*************Esto sirve para generar el dot del grafico del arbol colocando de color rojo los activos rentados***************************
 void ClassAVL::generarDot(Nodo_AVL* nodo, std::string& archivo) {
     if (nodo == nullptr) return;
 

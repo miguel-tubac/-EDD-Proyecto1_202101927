@@ -65,6 +65,8 @@ class MatrizDispersa {
 
     void generarGraficasEmpresa(std::string empresa);
     void generarImagenEmpresas(std::string dot);
+
+    void generarGraficaUsuario(std::string usuario);
 };
 
 

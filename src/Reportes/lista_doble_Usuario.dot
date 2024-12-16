@@ -1,0 +1,21 @@
+digraph G { randir = LR;
+	label = "Transacciones del username = miguel2";
+	labelloc = "t";
+	fontsize = 20;
+"ID: SzO1oisHidGl1fS
+
+ID Activo: K6RygBQ3RN29HWl
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 21"
+"ID: SdQExHXXLvPkAJ5
+
+ID Activo: WZunkd5RoL1IGxS
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 8"
+}

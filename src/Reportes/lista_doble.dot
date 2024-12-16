@@ -2,76 +2,92 @@ digraph G { randir = LR;
 	label = Transacciones;
 	labelloc = "t";
 	fontsize = 20;
-"ID: z746eqWWdikOFG0
+"ID: s09Dy3yoRg4fJc3
 
-ID Activo: gAR806gPKQCbLJE
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 40"->
-"ID: xY7p95eGwrronO8
-
-ID Activo: VgeFK8fg2YX86uV
+ID Activo: WZunkd5RoL1IGxS
 Username: miguel
 Departamento: guate
 Empresa: max
 Fecha: 2024-12-16
 Teimpo renta: 10"->
-"ID: e7mebCaXevJ3BBo
+"ID: SzO1oisHidGl1fS
 
-ID Activo: ZdbVaadzRZ8G9xc
+ID Activo: K6RygBQ3RN29HWl
 Username: miguel2
 Departamento: san juan
 Empresa: tecno sa
 Fecha: 2024-12-16
-Teimpo renta: 30"->
-"ID: Wj8em01zioKTkua
+Teimpo renta: 21"->
+"ID: SdQExHXXLvPkAJ5
 
-ID Activo: yfQ7zUay1x9lWen
+ID Activo: WZunkd5RoL1IGxS
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 8"->
+"ID: DizAvEH62MzgHvp
+
+ID Activo: yNCS9LZqYhIvXKg
 Username: miguel
 Departamento: guate
 Empresa: max
 Fecha: 2024-12-16
-Teimpo renta: 20"->
-"ID: z746eqWWdikOFG0
+Teimpo renta: 5"->
+"ID: 9nwqmYE5xIbuTns
 
-ID Activo: gAR806gPKQCbLJE
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 40"->
-"ID: Wj8em01zioKTkua
-
-ID Activo: yfQ7zUay1x9lWen
+ID Activo: i7AnSIzOhZULgrb
 Username: miguel
 Departamento: guate
 Empresa: max
 Fecha: 2024-12-16
-Teimpo renta: 20"->
-"ID: e7mebCaXevJ3BBo
+Teimpo renta: 6"->
+"ID: s09Dy3yoRg4fJc3
 
-ID Activo: ZdbVaadzRZ8G9xc
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 30"->
-"ID: xY7p95eGwrronO8
-
-ID Activo: VgeFK8fg2YX86uV
+ID Activo: WZunkd5RoL1IGxS
 Username: miguel
 Departamento: guate
 Empresa: max
 Fecha: 2024-12-16
 Teimpo renta: 10"->
-"ID: z746eqWWdikOFG0
+"ID: 9nwqmYE5xIbuTns
 
-ID Activo: gAR806gPKQCbLJE
+ID Activo: i7AnSIzOhZULgrb
+Username: miguel
+Departamento: guate
+Empresa: max
+Fecha: 2024-12-16
+Teimpo renta: 6"->
+"ID: DizAvEH62MzgHvp
+
+ID Activo: yNCS9LZqYhIvXKg
+Username: miguel
+Departamento: guate
+Empresa: max
+Fecha: 2024-12-16
+Teimpo renta: 5"->
+"ID: SdQExHXXLvPkAJ5
+
+ID Activo: WZunkd5RoL1IGxS
 Username: miguel2
 Departamento: san juan
 Empresa: tecno sa
 Fecha: 2024-12-16
-Teimpo renta: 40"
+Teimpo renta: 8"->
+"ID: SzO1oisHidGl1fS
+
+ID Activo: K6RygBQ3RN29HWl
+Username: miguel2
+Departamento: san juan
+Empresa: tecno sa
+Fecha: 2024-12-16
+Teimpo renta: 21"->
+"ID: s09Dy3yoRg4fJc3
+
+ID Activo: WZunkd5RoL1IGxS
+Username: miguel
+Departamento: guate
+Empresa: max
+Fecha: 2024-12-16
+Teimpo renta: 10"
 }

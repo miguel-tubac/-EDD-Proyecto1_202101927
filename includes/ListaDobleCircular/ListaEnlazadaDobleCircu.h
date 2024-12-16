@@ -30,6 +30,7 @@ public:
     void ordenarAscendente();
     void ordenarDesendente();
     void graficar();
+    void graficarUsuario(std::string usuario);
 };
 
 #endif //LISTAENLAZADADOBLE_H

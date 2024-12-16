@@ -182,7 +182,7 @@ void reporte_activos_rentados_usuario() {
     cout << "\n---------------- Activos rentados por un Usuario ---------------" << endl;
     cout << "\nIngresar username: ";
     cin >> usuario;
-
+    listaGeneral->graficarUsuario(usuario);
 }
 
 

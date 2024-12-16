@@ -169,3 +169,54 @@ void ListaEnlazadaDobleCircu::graficar(){
 }
 
 
+void ListaEnlazadaDobleCircu::graficarUsuario(std::string usuario) {
+        if (inicio == nullptr) {
+        std::cout << "La Lista Curcular Doble esta vacia." << std::endl;
+        return;
+    }
+
+    //Ahora empezamos a concatenar los datos del ast
+    std::string dot = "digraph G { randir = LR;";
+    dot += "\n\tlabel = \"Transacciones del username = "+usuario+"\";";
+    dot +="\n\tlabelloc = \"t\";"; // Posición del título (t = top)
+    dot += "\n\tfontsize = 20;"; // Tamaño de la fuente del título
+    //Ahora aqui se agregaran los nodos:
+    Node3* actual = inicio;
+    do {
+        if (actual->data->usuario == usuario) {
+            dot += "\n\"ID: "+actual->ID +"\n\nID Activo: "+ actual->data->idActivo+"\nUsername: "+actual->data->usuario+"\nDepartamento: "+actual->data->departamento+"\nEmpresa: "+actual->data->empresa+"\nFecha: "+actual->data->fecha+"\nTeimpo renta: "+std::to_string(actual->data->timpoRenta)+"\"";
+            //dot += "->";
+        }
+        actual = actual->next;
+        //Esto es para el ultimo nodo
+        if (actual == inicio){
+            if (actual->data->usuario == usuario) {
+                dot += "\n\"ID: "+actual->ID +"\n\nID Activo: "+ actual->data->idActivo+"\nUsername: "+actual->data->usuario+"\nDepartamento: "+actual->data->departamento+"\nEmpresa: "+actual->data->empresa+"\nFecha: "+actual->data->fecha+"\nTeimpo renta: "+std::to_string(actual->data->timpoRenta)+"\"";
+            }
+        }
+    } while (actual != inicio);
+
+    //Aca se cierra el archivo .dot
+    // Cerrar el archivo DOT
+    dot += "\n}";
+
+    // Escribir el archivo DOT
+    std::ofstream file;
+    file.open("../src/Reportes/lista_doble_Usuario.dot");
+
+    if (file.is_open()) {
+        file << dot;
+        file.close();
+    }
+
+    int resultado = std::system("dot -Tpng ../src/Reportes/lista_doble_Usuario.dot -o ../src/Reportes/lista_doble_Usuario.png");
+    if (resultado == 0) {
+        std::cout << "Imagen lista_doble_Usuario.png generada exitosamente." << std::endl;
+    } else {
+        std::cout << "Error al generar la imagen lista_doble_Usuario.png" << std::endl;
+    }
+}
+
+
+
+

@@ -5,6 +5,7 @@
 
 using namespace std;
 
+#include <iostream>
 #include <stddef.h>
 #include <fstream>
 #include <string>
@@ -17,8 +18,10 @@ MatrizDispersa::MatrizDispersa() {
 
 std::string nombre_usuario = "";
 Usuarios *usar;
-//Estos son los metodos que declare en la cabecera .h
+std::string nombre_departamento = "";
+std::string nombre_empresa = "";
 
+//Estos son los metodos que declare en la cabecera .h
 NodoMatriz *MatrizDispersa::existecabeHorizontal(std::string cabecera) {
     if (estaVacia()) {
         return nullptr;
@@ -382,6 +385,7 @@ bool MatrizDispersa::existePaswordUser(std::string username, std::string passwor
             if (nodoAux->valor != nullptr && nodoAux->valor->usuar == username && nodoAux->valor->pasword == password) {
                 nombre_usuario = nodoAux->valor->nombre;
                 usar = nodoAux->valor;
+                actualizarDatos(cabeHorizontalAux);//esto es para actulizar el nombre de los departa y empresas
                 return true; // Usuario y contraseña encontrados.
                 }
             nodoAux = nodoAux->atras;
@@ -398,9 +402,41 @@ bool MatrizDispersa::existePaswordUser(std::string username, std::string passwor
 }
 
 
+void MatrizDispersa::actualizarDatos(NodoMatriz *userActual) {
+    NodoMatriz *auxHorizontal = userActual;
+    NodoMatriz *auxVertical = userActual;
+
+    while (auxHorizontal != nullptr) {
+        if (auxHorizontal->valor == nullptr) {
+            nombre_departamento = auxHorizontal->cabecera;
+            break;
+        }
+        auxHorizontal = auxHorizontal->arriba;
+    }
+
+    while (auxVertical != nullptr) {
+        if (auxVertical->valor == nullptr) {
+            nombre_empresa = auxVertical->cabecera;
+            break;
+        }
+        auxVertical = auxVertical->anterior;
+    }
+
+}
+
+
 std::string MatrizDispersa::getNombre() {
     return nombre_usuario;
 }
+
+std::string MatrizDispersa::getDepartamento() {
+    return nombre_departamento;
+}
+
+std::string MatrizDispersa::getEmpresa() {
+    return nombre_empresa;
+}
+
 
 
 Usuarios *MatrizDispersa::getUsuario() {
@@ -498,7 +534,7 @@ void MatrizDispersa::generarGrafica(){
     if (resultado == 0) {
         std::cout << "Imagen matriz.png generada exitosamente." << std::endl;
     } else {
-        std::cerr << "Error al generar la imagen matriz.png" << std::endl;
+        std::cout << "Error al generar la imagen matriz.png" << std::endl;
     }
 }
 
@@ -628,37 +664,3 @@ void MatrizDispersa::generarGraficaUsuario(std::string usuario) {
 
     std::cout << "Error: El usuario con el username: "<< usuario << " no existe."<< std::endl;
 }
-
-
-void MatrizDispersa::generarGraficaUsuarioActivosRentados(std::string usuario) {
-    if (estaVacia()) {
-        std::cout << "Error: la matriz esta vacilla"<< std::endl;
-        return; // La matriz está vacía, no hay usuarios.
-    }
-
-    // Recorremos las cabeceras horizontales.
-    NodoMatriz *cabeHorizontalAux = horizontal->abajo;
-    NodoMatriz *cabeVerticalAux = horizontal->siguiente;
-    while (cabeHorizontalAux != nullptr) {
-        // Recorremos cada nodo en la fila correspondiente.
-        NodoMatriz *nodoAux = cabeHorizontalAux;
-        while (nodoAux != nullptr) {
-            if (nodoAux->valor != nullptr && nodoAux->valor->usuar == usuario) {
-                //nombre_usuario = nodoAux->valor->nombre;
-                //usar = nodoAux->valor;
-                nodoAux->valor->arbol->graficarArbolRentados(usuario);
-                return; // Usuario y contraseña encontrados.
-            }
-            nodoAux = nodoAux->atras;
-        }
-
-        if (cabeHorizontalAux->abajo ==  nullptr && cabeVerticalAux != nullptr) {
-            cabeHorizontalAux = cabeVerticalAux;
-            cabeVerticalAux = cabeVerticalAux->siguiente;
-        }
-        cabeHorizontalAux = cabeHorizontalAux->abajo;
-    }
-
-    std::cout << "Error: El usuario con el username: "<< usuario << " no existe."<< std::endl;
-}
-

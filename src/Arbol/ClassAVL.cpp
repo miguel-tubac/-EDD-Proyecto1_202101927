@@ -276,7 +276,7 @@ void ClassAVL::mostrarActivosConTiempo(Nodo_AVL* nodo) {
 }
 
 //*******************************Esto modifica los dias de renta****************************************************************
-void ClassAVL::modificarRentaActivo(std::string idActivo, int tiemporenta) {
+bool ClassAVL::modificarRentaActivo(std::string idActivo, int tiemporenta) {
     Nodo_AVL *aux = buscar(idActivo);
     if (aux != nullptr) {
         aux->tiempoRenta = tiemporenta;
@@ -285,9 +285,10 @@ void ClassAVL::modificarRentaActivo(std::string idActivo, int tiemporenta) {
         std::cout << "Nombre: "<< aux->activo->nombre << std::endl;
         std::cout << "Descripcion: "<< aux->activo->descripcion << std::endl;
         std::cout << "Teimpo de Renta: "<< aux->tiempoRenta << std::endl;
-        return;
+        return true;
     }
     std::cout << "El ID: " + idActivo +" no existe en el arbol" << std::endl;
+    return false;
 }
 
 //**********************************Esto me permite visualizar los activos que si esten rentados unicamente*********************
@@ -334,7 +335,7 @@ void ClassAVL::graficarArbol(std::string usuario) {
     dot += "    node [shape=circle];\n";
 
     // Llamada recursiva para escribir los nodos y conexiones
-    generarDot2(this->raiz, dot);
+    generarDot(this->raiz, dot);
 
     dot += "}\n";
 
@@ -352,56 +353,6 @@ void ClassAVL::graficarArbol(std::string usuario) {
         std::cout << "Imagen arbol_Usua.png generada exitosamente." << std::endl;
     } else {
         std::cerr << "Error al generar la imagen arbol_Usua.png" << std::endl;
-    }
-}
-
-
-//*************Esto sirve para generar el dot del grafico del arbol colocando todos los nodos iguales***************************
-void ClassAVL::generarDot2(Nodo_AVL* nodo, std::string& archivo) {
-    if (nodo == nullptr) return;
-
-    archivo += "    \"" + nodo->id + "\" [label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
-
-    // Escribir la conexión hacia el hijo izquierdo (si existe)
-    if (nodo->izq != nullptr) {
-        archivo += "    \"" + nodo->id + "\" -> \"" + nodo->izq->id + "\";\n";
-        generarDot2(nodo->izq, archivo);
-    }
-
-    // Escribir la conexión hacia el hijo derecho (si existe)
-    if (nodo->der != nullptr) {
-        archivo += "    \"" + nodo->id + "\" -> \"" + nodo->der->id + "\";\n";
-        generarDot2(nodo->der, archivo);
-    }
-}
-
-
-
-//***********************************Esto es para generar el grafico en Graphiz de Un solo usuario************************************************
-void ClassAVL::graficarArbolRentados(std::string usuario) {
-    std::string dot = "digraph AVLTree {\n";
-    dot += "\tlabel=\"Arbol AVL de Activos Rentados del username = "+usuario+"\";\n";
-    dot += "    node [shape=circle];\n";
-
-    // Llamada recursiva para escribir los nodos y conexiones
-    generarDot(this->raiz, dot);
-
-    dot += "}\n";
-
-    // Escribir el archivo DOT
-    std::ofstream file;
-    file.open("../src/Reportes/arbol_Usua_Rent.dot");
-
-    if (file.is_open()) {
-        file << dot;
-        file.close();
-    }
-
-    int resultado = std::system("dot -Tpng ../src/Reportes/arbol_Usua_Rent.dot -o ../src/Reportes/arbol_Usua_Rent.png");
-    if (resultado == 0) {
-        std::cout << "Imagen arbol_Usua_Rent.png generada exitosamente." << std::endl;
-    } else {
-        std::cerr << "Error al generar la imagen arbol_Usua_Rent.png" << std::endl;
     }
 }
 

@@ -191,7 +191,7 @@ CMakeFiles/Proyecto_1.dir/main.cpp.o: \
  /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
  /usr/include/c++/11/pstl/glue_numeric_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/ctime \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/MatrizDispersa/MatrizDispersa.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/MatrizDispersa/NodoMatriz.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/MatrizDispersa/../Clases/Usuarios.h \
@@ -200,4 +200,7 @@ CMakeFiles/Proyecto_1.dir/main.cpp.o: \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/MatrizDispersa/../Clases/../Arbol/../Clases/Activos.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Usuarios.h \
  /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Arbol/ClassAVL.h \
- /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Activos.h
+ /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Activos.h \
+ /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/ListaDoble/ListaEnlazadaDoble.h \
+ /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/ListaDoble/../Clases/Transacciones.h \
+ /mnt/c/Users/tubac/Downloads/Vacaciones\ Diciembre\ 2024/EDD\ Vacaciones\ Diciembre\ 2024/Laboratorio/Proyecto_1/includes/Clases/Transacciones.h

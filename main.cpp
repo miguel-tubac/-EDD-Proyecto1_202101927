@@ -4,6 +4,7 @@
 #include <fstream>
 #include <limits>
 #include <random>
+#include <ctime>
 
 using namespace std; //Esto es para evitar colocar delante de cada variable std ::
 
@@ -12,12 +13,15 @@ using namespace std; //Esto es para evitar colocar delante de cada variable std 
 #include "includes/Clases/Usuarios.h"
 #include "includes/Arbol/ClassAVL.h"
 #include "includes/Clases/Activos.h"
+#include "includes/ListaDoble/ListaEnlazadaDoble.h"
+#include "includes/Clases/Transacciones.h"
 
 
 MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris general
+ListaEnlazadaDoble *listaGeneral = new ListaEnlazadaDoble();
 
+//Son los datos del usuario logeado
 string name = "";
-
 Usuarios *logeado;
 
 //Para pasar a minusculas
@@ -178,7 +182,7 @@ void reporte_activos_rentados_usuario() {
     cout << "\n---------------- Activos rentados por un Usuario ---------------" << endl;
     cout << "\nIngresar username: ";
     cin >> usuario;
-    matrizGeneral->generarGraficaUsuarioActivosRentados(usuario);
+
 }
 
 void menu_admin() {
@@ -217,6 +221,7 @@ void menu_admin() {
                 break;
                 case 5:
                     cout << "Reporte Transacciones..." << endl;
+                    listaGeneral->graficar();
                 break;
                 case 6:
                     cout << "Reporte Activos de un Usuario..." << endl;
@@ -262,6 +267,23 @@ std::string generarCadenaAlfanumerica() {
     }
 
     return resultado;
+}
+
+
+// Función que devuelve la fecha actual en formato "AAAA-MM-DD"
+std::string obtenerFechaActual() {
+    // Obtenemos el tiempo actual
+    std::time_t tiempoActual = std::time(nullptr);
+
+    // Convertimos a una estructura tm
+    std::tm* fechaLocal = std::localtime(&tiempoActual);
+
+    // Formateamos la fecha como "AAAA-MM-DD"
+    char buffer[11]; // Espacio suficiente para "AAAA-MM-DD\0"
+    std::strftime(buffer, sizeof(buffer), "%Y-%m-%d", fechaLocal);
+
+    // Devolvemos la fecha como una cadena
+    return std::string(buffer);
 }
 
 
@@ -321,6 +343,12 @@ void modificar_activos() {
     logeado->arbol->modificarActivo(idActivo, nuevaDescripcion);
 }
 
+void agregar_transaccion(std::string idActivo, std::string departamento, std::string empresa, int tiempo) {
+    string DI = generarCadenaAlfanumerica();
+    string fecha = obtenerFechaActual();
+    Transacciones *nuevaTransaccion = new Transacciones(idActivo,logeado->usuar, departamento, empresa,fecha ,tiempo);
+    listaGeneral->agregar(DI, nuevaTransaccion);
+}
 
 void retar_activos() {
     string idActivo;
@@ -333,7 +361,10 @@ void retar_activos() {
     cin >> idActivo;
     cout << "Ingresar los Días por Rentar: ";
     cin >> tiemporenta;
-    logeado->arbol->modificarRentaActivo(idActivo, tiemporenta);
+    bool validacion = logeado->arbol->modificarRentaActivo(idActivo, tiemporenta);
+    if (validacion) {
+        agregar_transaccion(idActivo, matrizGeneral->getDepartamento(), matrizGeneral->getEmpresa(), tiemporenta);
+    }
 }
 
 void retornar_activos() {

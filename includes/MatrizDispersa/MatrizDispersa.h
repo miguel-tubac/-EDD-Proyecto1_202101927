@@ -68,7 +68,9 @@ class MatrizDispersa {
 
     void generarGraficaUsuario(std::string usuario);
 
-    void generarGraficaUsuarioActivosRentados(std::string usuario);
+    void actualizarDatos(NodoMatriz *userActual);
+    std::string getDepartamento();
+    std::string getEmpresa();
 };
 
 

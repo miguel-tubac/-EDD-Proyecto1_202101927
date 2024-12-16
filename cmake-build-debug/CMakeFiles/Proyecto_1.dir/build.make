@@ -167,6 +167,34 @@ CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/Clases/Activos.cpp" -o CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.s
 
+CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o: CMakeFiles/Proyecto_1.dir/flags.make
+CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o: ../src/Clases/Transacciones.cpp
+CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o: CMakeFiles/Proyecto_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o -MF CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o.d -o CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o -c "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/Clases/Transacciones.cpp"
+
+CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/Clases/Transacciones.cpp" > CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.i
+
+CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/Clases/Transacciones.cpp" -o CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.s
+
+CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o: CMakeFiles/Proyecto_1.dir/flags.make
+CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o: ../src/ListaDoble/ListaEnlazadaDoble.cpp
+CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o: CMakeFiles/Proyecto_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o -MF CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o.d -o CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o -c "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/ListaDoble/ListaEnlazadaDoble.cpp"
+
+CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/ListaDoble/ListaEnlazadaDoble.cpp" > CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.i
+
+CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/src/ListaDoble/ListaEnlazadaDoble.cpp" -o CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.s
+
 # Object files for target Proyecto_1
 Proyecto_1_OBJECTS = \
 "CMakeFiles/Proyecto_1.dir/main.cpp.o" \
@@ -175,7 +203,9 @@ Proyecto_1_OBJECTS = \
 "CMakeFiles/Proyecto_1.dir/src/Clases/Usuarios.cpp.o" \
 "CMakeFiles/Proyecto_1.dir/src/Arbol/Nodo_AVL.cpp.o" \
 "CMakeFiles/Proyecto_1.dir/src/Arbol/ClassAVL.cpp.o" \
-"CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.o"
+"CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.o" \
+"CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o" \
+"CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o"
 
 # External object files for target Proyecto_1
 Proyecto_1_EXTERNAL_OBJECTS =
@@ -187,9 +217,11 @@ Proyecto_1: CMakeFiles/Proyecto_1.dir/src/Clases/Usuarios.cpp.o
 Proyecto_1: CMakeFiles/Proyecto_1.dir/src/Arbol/Nodo_AVL.cpp.o
 Proyecto_1: CMakeFiles/Proyecto_1.dir/src/Arbol/ClassAVL.cpp.o
 Proyecto_1: CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.o
+Proyecto_1: CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o
+Proyecto_1: CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o
 Proyecto_1: CMakeFiles/Proyecto_1.dir/build.make
 Proyecto_1: CMakeFiles/Proyecto_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Proyecto_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Proyecto_1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Proyecto_1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -225,6 +225,30 @@ src/Clases/Activos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/Clases/Activos.cpp.s
 .PHONY : src/Clases/Activos.cpp.s
 
+src/Clases/Transacciones.o: src/Clases/Transacciones.cpp.o
+.PHONY : src/Clases/Transacciones.o
+
+# target to build an object file
+src/Clases/Transacciones.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.o
+.PHONY : src/Clases/Transacciones.cpp.o
+
+src/Clases/Transacciones.i: src/Clases/Transacciones.cpp.i
+.PHONY : src/Clases/Transacciones.i
+
+# target to preprocess a source file
+src/Clases/Transacciones.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.i
+.PHONY : src/Clases/Transacciones.cpp.i
+
+src/Clases/Transacciones.s: src/Clases/Transacciones.cpp.s
+.PHONY : src/Clases/Transacciones.s
+
+# target to generate assembly for a file
+src/Clases/Transacciones.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/Clases/Transacciones.cpp.s
+.PHONY : src/Clases/Transacciones.cpp.s
+
 src/Clases/Usuarios.o: src/Clases/Usuarios.cpp.o
 .PHONY : src/Clases/Usuarios.o
 
@@ -248,6 +272,30 @@ src/Clases/Usuarios.s: src/Clases/Usuarios.cpp.s
 src/Clases/Usuarios.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/Clases/Usuarios.cpp.s
 .PHONY : src/Clases/Usuarios.cpp.s
+
+src/ListaDoble/ListaEnlazadaDoble.o: src/ListaDoble/ListaEnlazadaDoble.cpp.o
+.PHONY : src/ListaDoble/ListaEnlazadaDoble.o
+
+# target to build an object file
+src/ListaDoble/ListaEnlazadaDoble.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.o
+.PHONY : src/ListaDoble/ListaEnlazadaDoble.cpp.o
+
+src/ListaDoble/ListaEnlazadaDoble.i: src/ListaDoble/ListaEnlazadaDoble.cpp.i
+.PHONY : src/ListaDoble/ListaEnlazadaDoble.i
+
+# target to preprocess a source file
+src/ListaDoble/ListaEnlazadaDoble.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.i
+.PHONY : src/ListaDoble/ListaEnlazadaDoble.cpp.i
+
+src/ListaDoble/ListaEnlazadaDoble.s: src/ListaDoble/ListaEnlazadaDoble.cpp.s
+.PHONY : src/ListaDoble/ListaEnlazadaDoble.s
+
+# target to generate assembly for a file
+src/ListaDoble/ListaEnlazadaDoble.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/src/ListaDoble/ListaEnlazadaDoble.cpp.s
+.PHONY : src/ListaDoble/ListaEnlazadaDoble.cpp.s
 
 src/MatrizDispersa/MatrizDispersa.o: src/MatrizDispersa/MatrizDispersa.cpp.o
 .PHONY : src/MatrizDispersa/MatrizDispersa.o
@@ -318,9 +366,15 @@ help:
 	@echo "... src/Clases/Activos.o"
 	@echo "... src/Clases/Activos.i"
 	@echo "... src/Clases/Activos.s"
+	@echo "... src/Clases/Transacciones.o"
+	@echo "... src/Clases/Transacciones.i"
+	@echo "... src/Clases/Transacciones.s"
 	@echo "... src/Clases/Usuarios.o"
 	@echo "... src/Clases/Usuarios.i"
 	@echo "... src/Clases/Usuarios.s"
+	@echo "... src/ListaDoble/ListaEnlazadaDoble.o"
+	@echo "... src/ListaDoble/ListaEnlazadaDoble.i"
+	@echo "... src/ListaDoble/ListaEnlazadaDoble.s"
 	@echo "... src/MatrizDispersa/MatrizDispersa.o"
 	@echo "... src/MatrizDispersa/MatrizDispersa.i"
 	@echo "... src/MatrizDispersa/MatrizDispersa.s"

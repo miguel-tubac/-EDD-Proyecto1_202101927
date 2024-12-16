@@ -81,12 +81,12 @@ clean: CMakeFiles/Proyecto_1.dir/clean
 CMakeFiles/Proyecto_1.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Proyecto_1.dir/build.make CMakeFiles/Proyecto_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target Proyecto_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target Proyecto_1"
 .PHONY : CMakeFiles/Proyecto_1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Proyecto_1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" 8
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Proyecto_1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/tubac/Downloads/Vacaciones Diciembre 2024/EDD Vacaciones Diciembre 2024/Laboratorio/Proyecto_1/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/Proyecto_1.dir/rule

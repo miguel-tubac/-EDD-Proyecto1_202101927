@@ -194,6 +194,7 @@ CMakeFiles/Proyecto_1.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/ctime \
+  /usr/include/c++/11/limits \
   ../includes/MatrizDispersa/MatrizDispersa.h \
   ../includes/MatrizDispersa/NodoMatriz.h \
   ../includes/Clases/Usuarios.h \
@@ -370,8 +371,8 @@ CMakeFiles/Proyecto_1.dir/src/Arbol/ClassAVL.cpp.o: ../src/Arbol/ClassAVL.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/istream \
   /usr/include/c++/11/ios \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
@@ -396,9 +397,14 @@ CMakeFiles/Proyecto_1.dir/src/Arbol/ClassAVL.cpp.o: ../src/Arbol/ClassAVL.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/c++/11/iostream
 
 CMakeFiles/Proyecto_1.dir/src/Arbol/Nodo_AVL.cpp.o: ../src/Arbol/Nodo_AVL.cpp \
   /usr/include/stdc-predef.h \
@@ -1332,17 +1338,17 @@ CMakeFiles/Proyecto_1.dir/src/MatrizDispersa/NodoMatriz.cpp.o: ../src/MatrizDisp
   ../includes/Clases/Activos.h
 
 
-/usr/include/c++/11/bits/fstream.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
-
 ../src/Clases/Usuarios.cpp:
 
 ../src/Clases/Activos.cpp:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+/usr/include/c++/11/bits/fstream.tcc:
 
 ../src/Arbol/Nodo_AVL.cpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
 ../includes/Clases/Activos.h:
 
@@ -1351,6 +1357,8 @@ CMakeFiles/Proyecto_1.dir/src/MatrizDispersa/NodoMatriz.cpp.o: ../src/MatrizDisp
 ../includes/Arbol/ClassAVL.h:
 
 ../includes/MatrizDispersa/MatrizDispersa.h:
+
+/usr/include/c++/11/limits:
 
 /usr/include/c++/11/bits/istream.tcc:
 

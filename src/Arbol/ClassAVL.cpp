@@ -4,6 +4,7 @@
 
 #include "../../includes/Arbol/ClassAVL.h"
 
+#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -128,6 +129,7 @@ void ClassAVL::eliminar(std::string id) {
     eliminar(id, this->raiz);//Con esto mando la raiz
 }
 
+/*
 void ClassAVL::eliminar(std::string id, Nodo_AVL *&nodo) {
     if (raiz == nullptr) {
         std::cout << "El ID: " + id +" no existe en el arbol" << std::endl;
@@ -207,7 +209,74 @@ void ClassAVL::eliminar(std::string id, Nodo_AVL *&nodo) {
         rotacionIzq(raiz);
         return;
     }
+}*/
+
+
+void ClassAVL::eliminar(std::string id, Nodo_AVL *&nodo) {
+    if (nodo == nullptr) {
+        std::cout << "El ID: " + id + " no existe en el árbol" << std::endl;
+        return;
+    }
+
+    if (id < nodo->id) {
+        eliminar(id, nodo->izq);
+    } else if (id > nodo->id) {
+        eliminar(id, nodo->der);
+    } else {
+        // Nodo encontrado
+        if (esHoja(nodo)) {
+            std::cout << "\nActivo Eliminado;" << std::endl;
+            std::cout << "ID: "<< nodo->id << std::endl;
+            std::cout << "Nombre: "<< nodo->activo->nombre << std::endl;
+            std::cout << "Descripcion: "<< nodo->activo->descripcion << std::endl;
+            delete nodo;
+            nodo = nullptr;
+        } else if (nodo->izq == nullptr) {
+            Nodo_AVL *temp = nodo;
+            nodo = nodo->der;
+            std::cout << "\nActivo Eliminado Correctamente" << std::endl;
+            //std::cout << "ID: "<< temp->id << std::endl;
+            //std::cout << "Nombre: "<< temp->activo->nombre << std::endl;
+            //std::cout << "Descripcion: "<< temp->activo->descripcion << std::endl;
+            delete temp;
+        } else if (nodo->der == nullptr) {
+            Nodo_AVL *temp = nodo;
+            nodo = nodo->izq;
+            std::cout << "\nActivo Eliminado Correctamente" << std::endl;
+            //std::cout << "ID: "<< temp->id << std::endl;
+            //std::cout << "Nombre: "<< temp->activo->nombre << std::endl;
+            //std::cout << "Descripcion: "<< temp->activo->descripcion << std::endl;
+            delete temp;
+        } else {
+            // Nodo con dos hijos: buscar el mayor de los menores
+            Nodo_AVL *temp = masALaDerecha(nodo->izq);
+            nodo->id = temp->id;
+            nodo->activo = temp->activo;
+            eliminar(temp->id, nodo->izq);
+        }
+    }
+
+    if (nodo == nullptr) return;
+
+    // Recalcular el factor de equilibrio
+    nodo->factorEq = factEquilibrio(nodo);
+
+    // Balancear el árbol si está desbalanceado
+    if (nodo->factorEq < -1) {
+        if (nodo->izq->factorEq > 0) {
+            rotacionDobleIzqDer(nodo);
+        } else {
+            rotacionDer(nodo);
+        }
+    } else if (nodo->factorEq > 1) {
+        if (nodo->der->factorEq < 0) {
+            rotacionDobleDerIzq(nodo);
+        } else {
+            rotacionIzq(nodo);
+        }
+    }
 }
+
 
 
 bool ClassAVL::esHoja(Nodo_AVL* nodo) {
@@ -340,4 +409,61 @@ void ClassAVL::modificarDevolucionActivo(std::string idActivo) {
 }
 
 
+
+//***********************************Esto es para generar el grafico en Graphiz************************************************
+void ClassAVL::graficarArbol() {
+    std::string dot = "digraph AVLTree {\n";
+    dot += "\tlabel=\"Arbol AVL\";\n";
+    dot += "    node [shape=circle];\n";
+
+    // Llamada recursiva para escribir los nodos y conexiones
+    generarDot(this->raiz, dot);
+
+    dot += "}\n";
+
+    // Escribir el archivo DOT
+    std::ofstream file;
+    file.open("../src/Reportes/arbol.dot");
+
+    if (file.is_open()) {
+        file << dot;
+        file.close();
+    }
+
+    int resultado = std::system("dot -Tpng ../src/Reportes/arbol.dot -o ../src/Reportes/arbol.png");
+    if (resultado == 0) {
+        std::cout << "Imagen arbol.png generada exitosamente." << std::endl;
+    } else {
+        std::cerr << "Error al generar la imagen arbol.png" << std::endl;
+    }
+}
+
+void ClassAVL::generarDot(Nodo_AVL* nodo, std::string& archivo) {
+    if (nodo == nullptr) return;
+
+    // Escribir el nodo actual
+    archivo += "    \"" + nodo->id + "\" [label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
+
+    // Escribir la conexión hacia el hijo izquierdo (si existe)
+    if (nodo->izq != nullptr) {
+        archivo += "    \"" + nodo->id + "\" -> \"" + nodo->izq->id + "\";\n";
+        generarDot(nodo->izq, archivo);
+    }
+
+    // Escribir la conexión hacia el hijo derecho (si existe)
+    if (nodo->der != nullptr) {
+        archivo += "    \"" + nodo->id + "\" -> \"" + nodo->der->id + "\";\n";
+        generarDot(nodo->der, archivo);
+    }
+}
+
+
+//**************************************Esto es para generar el dot y retornarlo*******************************************
+std::string ClassAVL::retornarDotArbolActivos() {
+    std::string dot = "";
+    // Llamada recursiva para escribir los nodos y conexiones
+    generarDot(this->raiz, dot);
+
+    return dot;
+}
 

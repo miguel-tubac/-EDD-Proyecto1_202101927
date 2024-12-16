@@ -3,6 +3,7 @@
 //#include <cstdlib>
 #include <ctime>
 //#include <fstream>
+#include <limits> // Para std::numeric_limits
 
 using namespace std; //Esto es para evitar colocar delante de cada variable std ::
 
@@ -17,12 +18,86 @@ MatrizDispersa *matrizGeneral = new MatrizDispersa();//Esta sera la matris gener
 
 string name = "";
 
+Usuarios *logeado;
+
 //Para pasar a minusculas
 string to_lower(string s) {
     std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) {
         return std::tolower(c);
     });
     return s;
+}
+
+
+int obtener_opcion() {
+    string entrada;
+    int opcion;
+
+    try {
+        cin >> entrada;
+
+        // Intentar convertir a entero
+        opcion = stoi(entrada);
+
+        // Validar rango
+        if (opcion < 1 || opcion > 2) {
+            throw out_of_range("Opcion fuera de rango. Elija 1 o 2.");
+        }
+    } catch (const invalid_argument& e) {
+        throw invalid_argument("Entrada invalida. Por favor, ingrese un numero.");
+    } catch (const out_of_range& e) {
+        throw out_of_range(e.what());
+    }
+
+    return opcion;
+}
+
+
+int obtener_opcion2() {
+    string entrada;
+    int opcion;
+
+    try {
+        cin >> entrada;
+
+        // Intentar convertir a entero
+        opcion = stoi(entrada);
+
+        // Validar rango
+        if (opcion < 1 || opcion > 9) {
+            throw out_of_range("Opcion fuera de rango. Elija entre 1 a 9.");
+        }
+    } catch (const invalid_argument& e) {
+        throw invalid_argument("Entrada invalida. Por favor, ingrese un numero.");
+    } catch (const out_of_range& e) {
+        throw out_of_range(e.what());
+    }
+
+    return opcion;
+}
+
+
+int obtener_opcion3() {
+    string entrada;
+    int opcion;
+
+    try {
+        cin >> entrada;
+
+        // Intentar convertir a entero
+        opcion = stoi(entrada);
+
+        // Validar rango
+        if (opcion < 1 || opcion > 7) {
+            throw out_of_range("Opcion fuera de rango. Elija entre 1 a 7.");
+        }
+    } catch (const invalid_argument& e) {
+        throw invalid_argument("Entrada invalida. Por favor, ingrese un numero.");
+    } catch (const out_of_range& e) {
+        throw out_of_range(e.what());
+    }
+
+    return opcion;
 }
 
 
@@ -66,10 +141,22 @@ void registrar_usuario() {
 }
 
 
+void reporte_activos_departamento() {
+    string departamento;
+    cout << "\n---------------- Reporte Activos Disponibles de un Departamento ---------------" << endl;
+    cout << "\nIngresar nombre del Departamento: ";
+    cin >> departamento;
+    departamento = to_lower(departamento);
+    matrizGeneral->generarGraficasDepartamento(departamento);
+
+    /*
+    logeado = matrizGeneral->getUsuario();
+    logeado->arbol->graficarArbol();*/
+}
 
 
 void menu_admin() {
-    int opcion;
+    int opcion = 0;
     do {
         cout << "\n------------------------ Menu Administrador -----------------------" << endl;
         cout << "1. Registrar Usuario" << endl;
@@ -82,39 +169,46 @@ void menu_admin() {
         cout << "8. Ordenar Transacciones" << endl;
         cout << "9. Finalizar Sesion" << endl;
         cout << "\nIngrese una opcion: ";
-        cin >> opcion;
 
-        switch(opcion) {
-            case 1:
-                cout << "Registrar Usuario..." << endl;
+        try {
+            opcion = obtener_opcion2();
+            switch(opcion) {
+                case 1:
+                    cout << "Registrar Usuario..." << endl;
                 registrar_usuario();
                 break;
-            case 2:
-                cout << "Reporte Matriz Dispersa..." << endl;
+                case 2:
+                    cout << "Reporte Matriz Dispersa..." << endl;
                 matrizGeneral->generarGrafica();
                 break;
-            case 3:
-                cout << "Reporte Activos Disponibles de un Departamento..." << endl;
+                case 3:
+                    cout << "Reporte Activos Disponibles de un Departamento..." << endl;
+                    reporte_activos_departamento();
                 break;
-            case 4:
-                cout << "Reporte Activos Disponibles de una Empresa..." << endl;
+                case 4:
+                    cout << "Reporte Activos Disponibles de una Empresa..." << endl;
                 break;
-            case 5:
-                cout << "Reporte Transacciones..." << endl;
+                case 5:
+                    cout << "Reporte Transacciones..." << endl;
                 break;
-            case 6:
-                cout << "Reporte Activos de un Usuario..." << endl;
+                case 6:
+                    cout << "Reporte Activos de un Usuario..." << endl;
                 break;
-            case 7:
-                cout << "Activos rentados por un Usuario..." << endl;
+                case 7:
+                    cout << "Activos rentados por un Usuario..." << endl;
                 break;
-            case 8:
-                cout << "Ordenar Transacciones" << endl;
-            case 9:
-                cout << "....Finalizando Sesion....." << endl;
+                case 8:
+                    cout << "Ordenar Transacciones" << endl;
+                case 9:
+                    cout << "....Finalizando Sesion....." << endl;
                 break;
-            default:
-                cout << "Opcion invalida. Por favor, intente de nuevo." << endl;
+            }
+        }catch (const exception& e) {
+            cout << e.what() << endl;
+
+            // Limpiar el estado del flujo de entrada si hay caracteres extraños
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
         cout << endl;
@@ -158,7 +252,7 @@ void menu_activos() {
     Activos *activoNuevo = new Activos(nombreAct, descripcion);
 
     //Se obtiene el objeto Usuario
-    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado = matrizGeneral->getUsuario();
     //Se obtiene el ArbolABl del Usuario
     ClassAVL *nuevo = logeado->arbol;
     nuevo->insertar(ID, activoNuevo); //Esta es la forma correcta
@@ -171,7 +265,7 @@ void eliminar_activos() {
     string idActivo;
     cout << "\n------------------------ Eliminar Activo -----------------------" << endl;
     //Se obtiene el objeto Usuario
-    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivos();
     cout << "\nIngresa el ID del Activo: ";
     cin >> idActivo;
@@ -183,7 +277,7 @@ void modificar_activos() {
     string nuevaDescripcion;
     cout << "\n------------------------ Modificar Activo -----------------------" << endl;
     //Se obtiene el objeto Usuario
-    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivos();
     cout << "\nIngresa el ID del Activo: ";
     cin >> idActivo;
@@ -199,7 +293,7 @@ void retar_activos() {
     int tiemporenta;
     cout << "\n------------------------ Rentar Activo -----------------------" << endl;
     //Se obtiene el objeto Usuario
-    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivosConTiempo();
     cout << "\nIngresa el ID del Activo a Rentar: ";
     cin >> idActivo;
@@ -212,7 +306,7 @@ void retornar_activos() {
     string idActivo;
     cout << "\n------------------------ Devolucion de Activo -----------------------" << endl;
     //Se obtiene el objeto Usuario
-    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivosRentados();
     cout << "\nIngresa el ID del Activo a Devolver: ";
     cin >> idActivo;
@@ -223,7 +317,7 @@ void retornar_activos() {
 void mostrar_activos_Rentados() {
     cout << "\n------------------------ Lista de Activos Rentados -----------------------" << endl;
     //Se obtiene el objeto Usuario
-    Usuarios *logeado = matrizGeneral->getUsuario();
+    logeado = matrizGeneral->getUsuario();
     logeado->arbol->mostrarActivosRentados();
     cout << "\nPresione Enter para continuar..." << endl;
     cin.ignore(); // Ignorar cualquier entrada previa
@@ -232,7 +326,7 @@ void mostrar_activos_Rentados() {
 
 //Este es el menu del usuario
 void menu_user() {
-    int opcion;
+    int opcion = 0;
     name = matrizGeneral->getNombre();
     do {
         cout << "\n------------------------ Bienvenido: "<< name <<" -----------------------" << endl;
@@ -244,39 +338,47 @@ void menu_user() {
         cout << "6. Mis Activos Rentados" << endl;
         cout << "7. Cerrar Sesion" << endl;
         cout << "\nIngrese una opcion: ";
-        cin >> opcion;
+        //cin >> opcion;
 
-        switch(opcion) {
-            case 1:
-                cout << "Agregar Activo..." << endl;
+        try {
+            opcion = obtener_opcion3();
+            switch(opcion) {
+                case 1:
+                    cout << "Agregar Activo..." << endl;
                 menu_activos();
                 break;
-            case 2:
-                cout << "Eliminar Activo..." << endl;
-                eliminar_activos();
-            break;
-            case 3:
-                cout << "Modificar Activo..." << endl;
+                case 2:
+                    cout << "Eliminar Activo..." << endl;
+                    eliminar_activos();
+                break;
+                case 3:
+                    cout << "Modificar Activo..." << endl;
                 modificar_activos();
-            break;
-            case 4:
-                cout << "Rentar Activo..." << endl;
+                break;
+                case 4:
+                    cout << "Rentar Activo..." << endl;
                 retar_activos();
-            break;
-            case 5:
-                cout << "Devolucion de Activos Rentados..." << endl;
+                break;
+                case 5:
+                    cout << "Devolucion de Activos Rentados..." << endl;
                 retornar_activos();
-            break;
-            case 6:
-                cout << "Mis Activos Rentados...\n" << endl;
+                break;
+                case 6:
+                    cout << "Mis Activos Rentados...\n" << endl;
                 mostrar_activos_Rentados();
-            break;
-            case 7:
-                cout << "....Finalizando Sesion....." << endl;
-            break;
-            default:
-                cout << "Opcion invalida. Por favor, intente de nuevo." << endl;
+                break;
+                case 7:
+                    cout << "....Finalizando Sesion....." << endl;
+                break;
+            }
+        } catch (const exception& e) {
+            cout << e.what() << endl;
+
+            // Limpiar el estado del flujo de entrada si hay caracteres extraños
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
+
 
         cout << endl;
     }while (opcion != 7);
@@ -324,29 +426,37 @@ void iniciar_sesion() {
 
 
 int main() {
-    int opcion;
+    int opcion = 0;
+
     do {
         cout << "\n------------------------ Renta de Activos -----------------------" << endl;
         cout << "1. Iniciar Sesion" << endl;
         cout << "2. Salir" << endl;
         cout << "Ingrese una opcion: ";
-        cin >> opcion;
-        //cin.ignore();
 
-        switch(opcion) {
-            case 1:
-                //cout << "Iniciando sesion..." << endl;
-                iniciar_sesion();
+        try {
+            opcion = obtener_opcion();
+            switch (opcion) {
+                case 1:
+                    iniciar_sesion();
                 break;
-            case 2:
-                cout << "Saliendo del programa..." << endl;
+                case 2:
+                    cout << "Saliendo del programa..." << endl;
                 break;
-            default:
-                cout << "Opcion invalida. Por favor, intente de nuevo." << endl;
+                default:
+                    // Este caso no ocurrirá debido a la validación en obtener_opcion().
+                        break;
+            }
+        } catch (const exception& e) {
+            cout << e.what() << endl;
+
+            // Limpiar el estado del flujo de entrada si hay caracteres extraños
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
         cout << endl;
-    } while(opcion != 2);
+    } while (opcion != 2);
 
     return 0;
 }

@@ -57,6 +57,11 @@ class ClassAVL {
         void mostrarActivosRentados();
 
         void modificarDevolucionActivo(std::string idActivo);
+
+        void graficarArbol();
+        void generarDot(Nodo_AVL* nodo, std::string& archivo);
+
+        std::string retornarDotArbolActivos();
 };
 
 #endif //CLASSABL_H

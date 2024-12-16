@@ -165,7 +165,7 @@ void MatrizDispersa::insertarValor(Usuarios* valor, std::string cabHorizontal, s
                 int opcion;
                 bool recorrido = true;
                 do {
-                    std::cout << "En esta posicion ya existe un usuario, elija donde Insertar al nuevo usuario:" << std::endl;
+                    std::cout << "\nEn esta posicion ya existe un usuario, elija donde Insertar al nuevo usuario:" << std::endl;
                     std::cout << "1. Adlante del Usuario" << std::endl;
                     std::cout << "2. Atras del Usuario" << std::endl;
                     std::cout << "\nIngrese una opcion: ";
@@ -503,5 +503,49 @@ void MatrizDispersa::generarGrafica(){
 }
 
 
+//****************************************Con esto genero todas las graficas de los arboles de una columna*******************
+void MatrizDispersa::generarGraficasDepartamento(std::string departamento) {
+    NodoMatriz *aux = existecabeHorizontal(departamento);
+    if (aux == nullptr) {
+        std::cout << "Error: No existe la cabecera departamento: "<< departamento << std::endl;
+        return;
+    }
+    aux = aux->abajo;
+    std::string dot = "digraph AVLTree {\n";
+    dot += "\tlabel=\"Arbol AVL del Departamento = "+departamento+"\";\n";
+    dot += "    node [shape=circle];\n";
+
+    while (aux != nullptr) {
+        NodoMatriz *aux2 = aux;
+        while (aux2 != nullptr) {
+            dot += aux2->valor->arbol->retornarDotArbolActivos();
+            aux2 = aux2->atras;
+        }
+
+        aux = aux->abajo;
+    }
+    dot += "}\n";
+    generarImagen(dot);
+}
+
+
+//*********************************************Esto genera la imagen a partir de un string*********************************
+void MatrizDispersa::generarImagen(std::string dot) {
+    // Escribir el archivo DOT
+    std::ofstream file;
+    file.open("../src/Reportes/arbol_Dep.dot");
+
+    if (file.is_open()) {
+        file << dot;
+        file.close();
+    }
+
+    int resultado = std::system("dot -Tpng ../src/Reportes/arbol_Dep.dot -o ../src/Reportes/arbol_Dep.png");
+    if (resultado == 0) {
+        std::cout << "Imagen arbol_Dep.png generada exitosamente." << std::endl;
+    } else {
+        std::cerr << "Error al generar la imagen arbol_Dep.png" << std::endl;
+    }
+}
 
 

@@ -365,13 +365,43 @@ void ClassAVL::generarDot2(Nodo_AVL* nodo, std::string& archivo) {
     // Escribir la conexión hacia el hijo izquierdo (si existe)
     if (nodo->izq != nullptr) {
         archivo += "    \"" + nodo->id + "\" -> \"" + nodo->izq->id + "\";\n";
-        generarDot(nodo->izq, archivo);
+        generarDot2(nodo->izq, archivo);
     }
 
     // Escribir la conexión hacia el hijo derecho (si existe)
     if (nodo->der != nullptr) {
         archivo += "    \"" + nodo->id + "\" -> \"" + nodo->der->id + "\";\n";
-        generarDot(nodo->der, archivo);
+        generarDot2(nodo->der, archivo);
+    }
+}
+
+
+
+//***********************************Esto es para generar el grafico en Graphiz de Un solo usuario************************************************
+void ClassAVL::graficarArbolRentados(std::string usuario) {
+    std::string dot = "digraph AVLTree {\n";
+    dot += "\tlabel=\"Arbol AVL de Activos Rentados del username = "+usuario+"\";\n";
+    dot += "    node [shape=circle];\n";
+
+    // Llamada recursiva para escribir los nodos y conexiones
+    generarDot(this->raiz, dot);
+
+    dot += "}\n";
+
+    // Escribir el archivo DOT
+    std::ofstream file;
+    file.open("../src/Reportes/arbol_Usua_Rent.dot");
+
+    if (file.is_open()) {
+        file << dot;
+        file.close();
+    }
+
+    int resultado = std::system("dot -Tpng ../src/Reportes/arbol_Usua_Rent.dot -o ../src/Reportes/arbol_Usua_Rent.png");
+    if (resultado == 0) {
+        std::cout << "Imagen arbol_Usua_Rent.png generada exitosamente." << std::endl;
+    } else {
+        std::cerr << "Error al generar la imagen arbol_Usua_Rent.png" << std::endl;
     }
 }
 
@@ -385,7 +415,7 @@ void ClassAVL::generarDot(Nodo_AVL* nodo, std::string& archivo) {
         //Aqui rellenar a los nodos de color rojo    color= red, style=filled
         archivo += "    \"" + nodo->id + "\" [color= red, style=filled label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
     }else {
-        archivo += "    \"" + nodo->id + "\" [label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
+        archivo += "    \"" + nodo->id + "\" [color= blue, style=filled label=\"" + "ID = " + nodo->id + "\\nNombre = " + nodo->activo->nombre + "\"];\n";
     }
 
 

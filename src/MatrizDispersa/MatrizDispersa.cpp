@@ -629,3 +629,36 @@ void MatrizDispersa::generarGraficaUsuario(std::string usuario) {
     std::cout << "Error: El usuario con el username: "<< usuario << " no existe."<< std::endl;
 }
 
+
+void MatrizDispersa::generarGraficaUsuarioActivosRentados(std::string usuario) {
+    if (estaVacia()) {
+        std::cout << "Error: la matriz esta vacilla"<< std::endl;
+        return; // La matriz está vacía, no hay usuarios.
+    }
+
+    // Recorremos las cabeceras horizontales.
+    NodoMatriz *cabeHorizontalAux = horizontal->abajo;
+    NodoMatriz *cabeVerticalAux = horizontal->siguiente;
+    while (cabeHorizontalAux != nullptr) {
+        // Recorremos cada nodo en la fila correspondiente.
+        NodoMatriz *nodoAux = cabeHorizontalAux;
+        while (nodoAux != nullptr) {
+            if (nodoAux->valor != nullptr && nodoAux->valor->usuar == usuario) {
+                //nombre_usuario = nodoAux->valor->nombre;
+                //usar = nodoAux->valor;
+                nodoAux->valor->arbol->graficarArbolRentados(usuario);
+                return; // Usuario y contraseña encontrados.
+            }
+            nodoAux = nodoAux->atras;
+        }
+
+        if (cabeHorizontalAux->abajo ==  nullptr && cabeVerticalAux != nullptr) {
+            cabeHorizontalAux = cabeVerticalAux;
+            cabeVerticalAux = cabeVerticalAux->siguiente;
+        }
+        cabeHorizontalAux = cabeHorizontalAux->abajo;
+    }
+
+    std::cout << "Error: El usuario con el username: "<< usuario << " no existe."<< std::endl;
+}
+

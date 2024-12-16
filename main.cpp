@@ -175,6 +175,14 @@ void reporte_activos_usuario() {
     matrizGeneral->generarGraficaUsuario(usuario);
 }
 
+void reporte_activos_rentados_usuario() {
+    string usuario;
+    cout << "\n---------------- Activos rentados por un Usuario ---------------" << endl;
+    cout << "\nIngresar username: ";
+    cin >> usuario;
+    matrizGeneral->generarGraficaUsuarioActivosRentados(usuario);
+}
+
 void menu_admin() {
     int opcion = 0;
     do {
@@ -218,6 +226,7 @@ void menu_admin() {
                 break;
                 case 7:
                     cout << "Activos rentados por un Usuario..." << endl;
+                    reporte_activos_rentados_usuario();
                 break;
                 case 8:
                     cout << "Ordenar Transacciones" << endl;

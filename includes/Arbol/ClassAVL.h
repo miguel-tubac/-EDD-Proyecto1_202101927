@@ -59,6 +59,7 @@ class ClassAVL {
         void modificarDevolucionActivo(std::string idActivo);
 
         void graficarArbol(std::string usuario);
+        void graficarArbolRentados(std::string usuario);
         void generarDot(Nodo_AVL* nodo, std::string& archivo);
         void generarDot2(Nodo_AVL* nodo, std::string& archivo);
 

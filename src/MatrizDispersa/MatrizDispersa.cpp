@@ -529,7 +529,7 @@ void MatrizDispersa::generarGraficasDepartamento(std::string departamento) {
 }
 
 
-//*********************************************Esto genera la imagen a partir de un string*********************************
+//*********************************************Esto genera la imagen a partir de un string de los departamentos********************************
 void MatrizDispersa::generarImagen(std::string dot) {
     // Escribir el archivo DOT
     std::ofstream file;
@@ -548,4 +548,50 @@ void MatrizDispersa::generarImagen(std::string dot) {
     }
 }
 
+
+
+//*********************************************Esto genera el codigo para los arboles de una empresa************************
+void MatrizDispersa::generarGraficasEmpresa(std::string empresa) {
+    NodoMatriz *aux = existecabeVertical(empresa);
+    if (aux == nullptr) {
+        std::cout << "Error: No existe la cabecera de la empresa: "<< empresa << std::endl;
+        return;
+    }
+    aux = aux->siguiente;
+    std::string dot = "digraph AVLTree {\n";
+    dot += "\tlabel=\"Arbol AVL de la empresa = "+empresa+"\";\n";
+    dot += "    node [shape=circle];\n";
+
+    while (aux != nullptr) {
+        NodoMatriz *aux2 = aux;
+        while (aux2 != nullptr) {
+            dot += aux2->valor->arbol->retornarDotArbolActivos();
+            aux2 = aux2->atras;
+        }
+
+        aux = aux->siguiente;
+    }
+    dot += "}\n";
+    generarImagenEmpresas(dot);
+}
+
+
+//*********************************************Esto genera la imagen a partir de un string de las Empresas*********************************
+void MatrizDispersa::generarImagenEmpresas(std::string dot) {
+    // Escribir el archivo DOT
+    std::ofstream file;
+    file.open("../src/Reportes/arbol_Emp.dot");
+
+    if (file.is_open()) {
+        file << dot;
+        file.close();
+    }
+
+    int resultado = std::system("dot -Tpng ../src/Reportes/arbol_Emp.dot -o ../src/Reportes/arbol_Emp.png");
+    if (resultado == 0) {
+        std::cout << "Imagen arbol_Emp.png generada exitosamente." << std::endl;
+    } else {
+        std::cerr << "Error al generar la imagen arbol_Emp.png" << std::endl;
+    }
+}
 

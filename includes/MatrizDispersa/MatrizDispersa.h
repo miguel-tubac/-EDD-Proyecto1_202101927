@@ -61,8 +61,10 @@ class MatrizDispersa {
     void insertarFrente(Usuarios* nuevoUsuario, NodoMatriz* usuarioActual);
 
     void generarGraficasDepartamento(std::string departamento);
-
     void generarImagen(std::string dot);
+
+    void generarGraficasEmpresa(std::string empresa);
+    void generarImagenEmpresas(std::string dot);
 };
 
 

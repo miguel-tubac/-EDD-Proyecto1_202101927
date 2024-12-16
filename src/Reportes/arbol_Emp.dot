@@ -1,5 +1,5 @@
 digraph AVLTree {
-	label="Arbol AVL del Departamento = guate";
+	label="Arbol AVL de la empresa = max";
     node [shape=circle];
     "hIxRm2dzuBUbZ0t" [label="ID = hIxRm2dzuBUbZ0t\nNombre = Relojes"];
     "hIxRm2dzuBUbZ0t" -> "hCJ3FqrIc2Xz111";

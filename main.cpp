@@ -157,6 +157,16 @@ void reporte_activos_departamento() {
 }
 
 
+void reporte_activos_empresa() {
+    string empresa;
+    cout << "\n---------------- Reporte Activos Disponibles de un Empresa ---------------" << endl;
+    cout << "\nIngresar nombre de la Empresa: ";
+    cin >> empresa;
+    empresa = to_lower(empresa);
+    matrizGeneral->generarGraficasEmpresa(empresa);
+}
+
+
 void menu_admin() {
     int opcion = 0;
     do {
@@ -189,6 +199,7 @@ void menu_admin() {
                 break;
                 case 4:
                     cout << "Reporte Activos Disponibles de una Empresa..." << endl;
+                    reporte_activos_empresa();
                 break;
                 case 5:
                     cout << "Reporte Transacciones..." << endl;

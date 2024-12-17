@@ -1,21 +1,45 @@
 digraph G { randir = LR;
-	label = "Transacciones del username = miguel2";
+	label = "Transacciones del username = elian_estrada";
 	labelloc = "t";
 	fontsize = 20;
-"ID: SzO1oisHidGl1fS
+"ID: K7L1q1vMUdIjIAl
 
-ID Activo: K6RygBQ3RN29HWl
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 21"
-"ID: SdQExHXXLvPkAJ5
+ID Activo: 8Y0tknlksfb0Csp
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 20"
+"ID: A2eOtkMh4jprCrL
 
-ID Activo: WZunkd5RoL1IGxS
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 8"
+ID Activo: 4OJBdetSdTdQ9sL
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 10"
+"ID: 8NoCm78uCbPL6SL
+
+ID Activo: CKfzwZHXASHh6yt
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 15"
+"ID: wlX41EkJSwd0eb1
+
+ID Activo: U5Jq2rDefsxpPmy
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 5"
+"ID: K7L1q1vMUdIjIAl
+
+ID Activo: 8Y0tknlksfb0Csp
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 20"
 }

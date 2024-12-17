@@ -3,23 +3,57 @@ digraph G {
 	labelloc="t";
 	node [shape=box width=1.2 ];
 n0 -> n2 -> n0 [color=transparent];
-	n2 [label="guate" group=0];
+	n2 [label="guatemala" group=0];
 	n2 -> n1 -> n2;
-	n1 [label = "miguel" group=0];
+	n1 [label = "elian_estrada" group=0];
+	n1 -> n7 -> n1;
+	n7 [label = "casimiro" group=2];
+	n7 -> n14 -> n7;
+	n14 [label = "juanma" group=4];
 	n2 -> n5 -> n2;
-	n5 [label="san juan" group=1];
+	n5 [label="jutiapa" group=1];
 	n5 -> n4 -> n5;
-	n4 [label = "miguel2" group=1];
+	n4 [label = "incrediboy" group=1];
+	n4 -> n16 -> n4;
+	n16 [label = "azurdia" group=4];
+	n16 -> n15 -> n16;
+	n15 [label = "fuego03" group=4];
+	n5 -> n9 -> n5;
+	n9 [label="jalapa" group=2];
+	n9 -> n8 -> n9;
+	n8 [label = "alcachofa" group=2];
+	n9 -> n12 -> n9;
+	n12 [label="peten" group=3];
+	n12 -> n11 -> n12;
+	n11 [label = "mafer" group=3];
 	n0 -> n3 -> n0 [color=transparent];
-	n3 [label="max" group=0];
+	n3 [label="igss" group=0];
 	n3 -> n1 -> n3;
-	n1 [label="miguel" group=0];
+	n1 [label="elian_estrada" group=0];
 	n3 -> n6 -> n3;
-	n6 [label="tecno sa" group=0];
-	n6 -> n4 -> n6;
-	n4 [label="miguel2" group=1];
-	{ rank=same; n0; n2; n5; }
+	n6 [label="max" group=0];
+	n6 -> n7 -> n6;
+	n7 [label="casimiro" group=2];
+	n7 -> n4 -> n7;
+	n4 [label="incrediboy" group=1];
+	n6 -> n10 -> n6;
+	n10 [label="usac" group=0];
+	n10 -> n14 -> n10;
+	n14 [label="juanma" group=4];
+	n14 -> n16 -> n14;
+	n16 [label="azurdia" group=4];
+	n16 -> n8 -> n16;
+	n8 [label="alcachofa" group=2];
+	n10 -> n13 -> n10;
+	n13 [label="cinepolis" group=0];
+	n13 -> n15 -> n13;
+	n15 [label="fuego03" group=4];
+	n15 -> n11 -> n15;
+	n11 [label="mafer" group=3];
+	{ rank=same; n0; n2; n5; n9; n12; }
 	{ rank=same; n3; n1; }
-	{ rank=same; n6; n4; }
+	{ rank=same; n6; n7; n4; }
+	{ rank=same; n10; n14; n16; n8; }
+	{ rank=same; n13; n15; n11; }
 	
 }

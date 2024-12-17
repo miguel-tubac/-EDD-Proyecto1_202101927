@@ -1,9 +1,9 @@
 digraph AVLTree {
-	label="Arbol AVL de Activos del username = miguel";
+	label="Arbol AVL de Activos del username = elian_estrada";
     node [shape=circle];
-    "aIiaETXVaqhg1Pf" [color= blue, style=filled label="ID = aIiaETXVaqhg1Pf\nNombre = Pelotas"];
-    "aIiaETXVaqhg1Pf" -> "07oU7Ukqr0ltDrN";
-    "07oU7Ukqr0ltDrN" [color= red, style=filled label="ID = 07oU7Ukqr0ltDrN\nNombre = Televisores"];
-    "aIiaETXVaqhg1Pf" -> "vH76eTv7AIJlJmU";
-    "vH76eTv7AIJlJmU" [color= blue, style=filled label="ID = vH76eTv7AIJlJmU\nNombre = Relojes"];
+    "8Y0tknlksfb0Csp" [color= red, style=filled label="ID = 8Y0tknlksfb0Csp\nNombre = madera"];
+    "8Y0tknlksfb0Csp" -> "4OJBdetSdTdQ9sL";
+    "4OJBdetSdTdQ9sL" [color= red, style=filled label="ID = 4OJBdetSdTdQ9sL\nNombre = martillos"];
+    "8Y0tknlksfb0Csp" -> "U5Jq2rDefsxpPmy";
+    "U5Jq2rDefsxpPmy" [color= blue, style=filled label="ID = U5Jq2rDefsxpPmy\nNombre = barreno"];
 }

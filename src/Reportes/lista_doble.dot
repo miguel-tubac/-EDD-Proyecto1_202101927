@@ -2,92 +2,348 @@ digraph G { randir = LR;
 	label = Transacciones;
 	labelloc = "t";
 	fontsize = 20;
-"ID: s09Dy3yoRg4fJc3
+"ID: Ll16raUx46BGCVz
 
-ID Activo: WZunkd5RoL1IGxS
-Username: miguel
-Departamento: guate
-Empresa: max
-Fecha: 2024-12-16
+ID Activo: TF4CD3GB1tKw09k
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 20"->
+"ID: DauecSAE3yYBWgm
+
+ID Activo: XGrlluRCazPUvHh
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
 Teimpo renta: 10"->
-"ID: SzO1oisHidGl1fS
+"ID: nIPq0mMsocjv1NZ
 
-ID Activo: K6RygBQ3RN29HWl
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 21"->
-"ID: SdQExHXXLvPkAJ5
+ID Activo: M6G437lfVIxHVqC
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 15"->
+"ID: y9QVy8n305Wjdwj
 
-ID Activo: WZunkd5RoL1IGxS
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 8"->
-"ID: DizAvEH62MzgHvp
-
-ID Activo: yNCS9LZqYhIvXKg
-Username: miguel
-Departamento: guate
-Empresa: max
-Fecha: 2024-12-16
+ID Activo: B3I68CeQcT5fYWz
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
 Teimpo renta: 5"->
-"ID: 9nwqmYE5xIbuTns
+"ID: 9iY287lR2O2za6l
 
-ID Activo: i7AnSIzOhZULgrb
-Username: miguel
-Departamento: guate
+ID Activo: iOOisg4YpDjC9aI
+Username: casimiro
+Departamento: guatemala
 Empresa: max
-Fecha: 2024-12-16
-Teimpo renta: 6"->
-"ID: s09Dy3yoRg4fJc3
+Fecha: 2024-12-17
+Teimpo renta: 15"->
+"ID: 87IRMWumz0xNOsP
 
-ID Activo: WZunkd5RoL1IGxS
-Username: miguel
-Departamento: guate
+ID Activo: XIt8bJu0mdomSac
+Username: casimiro
+Departamento: guatemala
 Empresa: max
-Fecha: 2024-12-16
+Fecha: 2024-12-17
+Teimpo renta: 45"->
+"ID: b5k4fPldH06BvUK
+
+ID Activo: qgIsGY6I1KzyVGH
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
 Teimpo renta: 10"->
-"ID: 9nwqmYE5xIbuTns
+"ID: wXGUl2Hokryfbb7
 
-ID Activo: i7AnSIzOhZULgrb
-Username: miguel
-Departamento: guate
+ID Activo: 7OuxkfoOXnpUF1X
+Username: casimiro
+Departamento: guatemala
 Empresa: max
-Fecha: 2024-12-16
-Teimpo renta: 6"->
-"ID: DizAvEH62MzgHvp
-
-ID Activo: yNCS9LZqYhIvXKg
-Username: miguel
-Departamento: guate
-Empresa: max
-Fecha: 2024-12-16
+Fecha: 2024-12-17
 Teimpo renta: 5"->
-"ID: SdQExHXXLvPkAJ5
+"ID: PUypcux6beguTKI
 
-ID Activo: WZunkd5RoL1IGxS
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 8"->
-"ID: SzO1oisHidGl1fS
-
-ID Activo: K6RygBQ3RN29HWl
-Username: miguel2
-Departamento: san juan
-Empresa: tecno sa
-Fecha: 2024-12-16
-Teimpo renta: 21"->
-"ID: s09Dy3yoRg4fJc3
-
-ID Activo: WZunkd5RoL1IGxS
-Username: miguel
-Departamento: guate
+ID Activo: 6SUtiudIcxMNnz2
+Username: casimiro
+Departamento: guatemala
 Empresa: max
-Fecha: 2024-12-16
-Teimpo renta: 10"
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: XjnCn8uiR1eKa2W
+
+ID Activo: ms7NYFQ2esqkm8j
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 20"->
+"ID: NzTFzXfEPKxtM4O
+
+ID Activo: NXihzZB7bCuHIV4
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: KPih8QFgWiqppuq
+
+ID Activo: 3reKjmjaI488eew
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 8"->
+"ID: tAAKJHxvJmtqMz3
+
+ID Activo: XmjvhiymO5kHUYk
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 12"->
+"ID: RsGXSesthzv984M
+
+ID Activo: 8SMIoHZe4iZNAtE
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 14"->
+"ID: TNn33HhZxzlXzVf
+
+ID Activo: gQ1QYpQtMxHzv19
+Username: fuego03
+Departamento: jutiapa
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: yvAur2MWQWw7FVu
+
+ID Activo: HvBzhZIvKLhYHJf
+Username: fuego03
+Departamento: jutiapa
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 15"->
+"ID: J7ebVXWdeBUNJZy
+
+ID Activo: Fm5cYdDRHg261OY
+Username: fuego03
+Departamento: jutiapa
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: FGrfVjsRUVdPyCx
+
+ID Activo: zgir1vuZ79YcEPE
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: jywgY0MwWPnm3X8
+
+ID Activo: I1OPYz7OhQCQRxs
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: IjyY8rH1FU2JxT7
+
+ID Activo: BD35a4TYuv3FpoR
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: 6TnZO9lrgTeltMI
+
+ID Activo: LadpfppJM9umwV9
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: Ll16raUx46BGCVz
+
+ID Activo: TF4CD3GB1tKw09k
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 20"->
+"ID: 6TnZO9lrgTeltMI
+
+ID Activo: LadpfppJM9umwV9
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: IjyY8rH1FU2JxT7
+
+ID Activo: BD35a4TYuv3FpoR
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: jywgY0MwWPnm3X8
+
+ID Activo: I1OPYz7OhQCQRxs
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: FGrfVjsRUVdPyCx
+
+ID Activo: zgir1vuZ79YcEPE
+Username: incrediboy
+Departamento: jutiapa
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: J7ebVXWdeBUNJZy
+
+ID Activo: Fm5cYdDRHg261OY
+Username: fuego03
+Departamento: jutiapa
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: yvAur2MWQWw7FVu
+
+ID Activo: HvBzhZIvKLhYHJf
+Username: fuego03
+Departamento: jutiapa
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 15"->
+"ID: TNn33HhZxzlXzVf
+
+ID Activo: gQ1QYpQtMxHzv19
+Username: fuego03
+Departamento: jutiapa
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: RsGXSesthzv984M
+
+ID Activo: 8SMIoHZe4iZNAtE
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 14"->
+"ID: tAAKJHxvJmtqMz3
+
+ID Activo: XmjvhiymO5kHUYk
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 12"->
+"ID: KPih8QFgWiqppuq
+
+ID Activo: 3reKjmjaI488eew
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 8"->
+"ID: NzTFzXfEPKxtM4O
+
+ID Activo: NXihzZB7bCuHIV4
+Username: mafer
+Departamento: peten
+Empresa: cinepolis
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: XjnCn8uiR1eKa2W
+
+ID Activo: ms7NYFQ2esqkm8j
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 20"->
+"ID: PUypcux6beguTKI
+
+ID Activo: 6SUtiudIcxMNnz2
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: wXGUl2Hokryfbb7
+
+ID Activo: 7OuxkfoOXnpUF1X
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: b5k4fPldH06BvUK
+
+ID Activo: qgIsGY6I1KzyVGH
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: 87IRMWumz0xNOsP
+
+ID Activo: XIt8bJu0mdomSac
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 45"->
+"ID: 9iY287lR2O2za6l
+
+ID Activo: iOOisg4YpDjC9aI
+Username: casimiro
+Departamento: guatemala
+Empresa: max
+Fecha: 2024-12-17
+Teimpo renta: 15"->
+"ID: y9QVy8n305Wjdwj
+
+ID Activo: B3I68CeQcT5fYWz
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 5"->
+"ID: nIPq0mMsocjv1NZ
+
+ID Activo: M6G437lfVIxHVqC
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 15"->
+"ID: DauecSAE3yYBWgm
+
+ID Activo: XGrlluRCazPUvHh
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 10"->
+"ID: Ll16raUx46BGCVz
+
+ID Activo: TF4CD3GB1tKw09k
+Username: elian_estrada
+Departamento: guatemala
+Empresa: igss
+Fecha: 2024-12-17
+Teimpo renta: 20"
 }

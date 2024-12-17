@@ -510,42 +510,203 @@ void iniciar_sesion() {
 }
 
 
+void agregar_transaccion_Inicio(std::string idActivo, std::string user, std::string departamento, std::string empresa, int tiempo) {
+    string DI = generarCadenaAlfanumerica();
+    string fecha = obtenerFechaActual();
+    Transacciones *nuevaTransaccion = new Transacciones(idActivo,user, departamento, empresa,fecha ,tiempo);
+    listaGeneral->agregar(DI, nuevaTransaccion);
+}
+
 
 void agregar_usuariosIniciales() {
+    bool validacion;
     string ID = generarCadenaAlfanumerica();
     //Aqui va un activo ingresado
     ClassAVL *nuevo = new ClassAVL();
-    Activos *activoNuevo = new Activos("Televisores", "Son de 32 Pulgadas.");
+    Activos *activoNuevo = new Activos("madera", "madera para albanil");
     nuevo->insertar(ID, activoNuevo);
+    validacion = nuevo->modificarRentaActivo(ID, 20);
+    agregar_transaccion_Inicio(ID,"elian_estrada", "guatemala", "igss", 20);
     //Este es el segundo activo
     ID = generarCadenaAlfanumerica();
-    Activos *activoNuevo2 = new Activos("Relojes", "Relojes marca Rolex.");
+    Activos *activoNuevo2 = new Activos("martillos", "martillos para madera");
     nuevo->insertar(ID, activoNuevo2);
+    validacion = nuevo->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"elian_estrada", "guatemala", "igss", 10);
     //Este es el tercer activo
     ID = generarCadenaAlfanumerica();
-    Activos *activoNuevo3 = new Activos("Pelotas", "Pelotas de color rojo.");
+    Activos *activoNuevo3 = new Activos("caladora", "caladora para cortar maderas prefabricadas");
     nuevo->insertar(ID, activoNuevo3);
+    validacion = nuevo->modificarRentaActivo(ID, 15);
+    agregar_transaccion_Inicio(ID,"elian_estrada", "guatemala", "igss", 15);
+    //Este es el cuarto activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo4 = new Activos("barreno", "barreno para concreto");
+    nuevo->insertar(ID, activoNuevo4);
+    validacion = nuevo->modificarRentaActivo(ID, 5);
+    agregar_transaccion_Inicio(ID,"elian_estrada", "guatemala", "igss", 5);
     //Aca se incertan a la matriz dispersa
-    Usuarios* userNuevo = new Usuarios("miguel", "Miguel Adrian", "1234", nuevo);
-    matrizGeneral->insertarValor(userNuevo, "guate", "max");
+    Usuarios* userNuevo = new Usuarios("elian_estrada", "Elian Estrada", "1234", nuevo);
+    matrizGeneral->insertarValor(userNuevo, "guatemala", "igss");
 
+    //Este es el segundo usuario
 
-    //***********Aca va otro usuario***************
-    //Aqui va un activo ingresado
     ClassAVL *nuevo2 = new ClassAVL();
-    Activos *activoNuevo4 = new Activos("Cuadernos", "Cuadernos Grandes.");
-    nuevo2->insertar(ID, activoNuevo4);
+    Usuarios* userNuevo2 = new Usuarios("juanito", "Juan Perez", "4567", nuevo2);
+    matrizGeneral->insertarValor(userNuevo2, "jutiapa", "max");
+
+    //Este es el Tercer usuario
+
+    //Aqui va un activo ingresado
+    ID = generarCadenaAlfanumerica();
+    ClassAVL *nuevo3 = new ClassAVL();
+    Activos *activoNuevo5 = new Activos("balanza", "balanza con maximo de 25kg");
+    nuevo3->insertar(ID, activoNuevo5);
+    validacion = nuevo3->modificarRentaActivo(ID, 15);
+    agregar_transaccion_Inicio(ID,"casimiro", "guatemala", "max", 15);
     //Este es el segundo activo
     ID = generarCadenaAlfanumerica();
-    Activos *activoNuevo5 = new Activos("Laptops", "Laptops de la marca Dell.");
-    nuevo2->insertar(ID, activoNuevo5);
+    Activos *activoNuevo6 = new Activos("canastas", "canastas para frutas y verduras");
+    nuevo3->insertar(ID, activoNuevo6);
+    validacion = nuevo3->modificarRentaActivo(ID, 45);
+    agregar_transaccion_Inicio(ID,"casimiro", "guatemala", "max", 45);
     //Este es el tercer activo
     ID = generarCadenaAlfanumerica();
-    Activos *activoNuevo6 = new Activos("Alfombras", "Alfombras de color azul.");
-    nuevo2->insertar(ID, activoNuevo6);
-    //Aca se incertan a la matriz dispersa
-    Usuarios* userNuevo2 = new Usuarios("miguel2", "Tubac Miguel", "1234", nuevo2);
-    matrizGeneral->insertarValor(userNuevo2, "san juan", "tecno sa");
+    Activos *activoNuevo7 = new Activos("linternas", "linternas para alumbrar cuartos oscuros");
+    nuevo3->insertar(ID, activoNuevo7);
+    validacion = nuevo3->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"casimiro", "guatemala", "max", 10);
+    //Este es el cuarto activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo8 = new Activos("cargadores", "cargadores de telefonos tipo c");
+    nuevo3->insertar(ID, activoNuevo8);
+    validacion = nuevo3->modificarRentaActivo(ID, 5);
+    agregar_transaccion_Inicio(ID,"casimiro", "guatemala", "max", 5);
+    //Este es el cuarto activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo9 = new Activos("cables", "cables de todo tipo");
+    nuevo3->insertar(ID, activoNuevo9);
+    validacion = nuevo3->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"casimiro", "guatemala", "max", 10);
+    //Este es el cuarto activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo10 = new Activos("lazos", "lazos para tender ropa");
+    nuevo3->insertar(ID, activoNuevo10);
+    validacion = nuevo3->modificarRentaActivo(ID, 20);
+    agregar_transaccion_Inicio(ID,"casimiro", "guatemala", "max", 20);
+    //Aca se incertan a la matriz dispersas
+    Usuarios* userNuevo3 = new Usuarios("casimiro", "Carlos Perez", "721896", nuevo3);
+    matrizGeneral->insertarValor(userNuevo3, "guatemala", "max");
+
+    //Este es el cuarto usuario
+
+    ClassAVL *nuevo4 = new ClassAVL();
+    Usuarios* userNuevo4 = new Usuarios("pedrito", "Pedro Rodriguez", "48956", nuevo4);
+    matrizGeneral->insertarValor(userNuevo4, "jalapa", "usac");
+
+    //Este es el quinto usuario
+
+    //Aqui va un activo ingresado
+    ID = generarCadenaAlfanumerica();
+    ClassAVL *nuevo5 = new ClassAVL();
+    Activos *activoNuevo11 = new Activos("audifonos", "audifonos para grabaciones de estudio");
+    nuevo5->insertar(ID, activoNuevo11);
+    validacion = nuevo5->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"mafer", "peten", "cinepolis", 10);
+    //Este es el segundo activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo12 = new Activos("microfonos", "microfonos de todo tipo");
+    nuevo5->insertar(ID, activoNuevo12);
+    validacion = nuevo5->modificarRentaActivo(ID, 8);
+    agregar_transaccion_Inicio(ID,"mafer", "peten", "cinepolis", 8);
+    //Este es el tercer activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo13 = new Activos("pedestales", "pedestales para microfonos grandes y pequeños");
+    nuevo5->insertar(ID, activoNuevo13);
+    validacion = nuevo5->modificarRentaActivo(ID, 12);
+    agregar_transaccion_Inicio(ID,"mafer", "peten", "cinepolis", 12);
+    //Este es el cuarto activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo14 = new Activos("atriles", "atriles para colocar ojas con gancho");
+    nuevo5->insertar(ID, activoNuevo14);
+    validacion = nuevo5->modificarRentaActivo(ID, 14);
+    agregar_transaccion_Inicio(ID,"mafer", "peten", "cinepolis", 14);
+    //Aca se incertan a la matriz dispersas
+    Usuarios* userNuevo5 = new Usuarios("mafer", "Maria Fernanda", "54312", nuevo5);
+    matrizGeneral->insertarValor(userNuevo5, "peten", "cinepolis");
+
+    //Este es el usuario numero sexto
+
+    ClassAVL *nuevo6 = new ClassAVL();
+    Usuarios* userNuevo6 = new Usuarios("juanma", "Juan Manuel", "32897", nuevo6);
+    matrizGeneral->insertarValor(userNuevo6, "guatemala", "usac");
+
+    //Este es el usuario numero septimo
+
+    //Aqui va un activo ingresado
+    ID = generarCadenaAlfanumerica();
+    ClassAVL *nuevo7 = new ClassAVL();
+    Activos *activoNuevo15 = new Activos("termos", "pequeños termos para bebidas calientes");
+    nuevo7->insertar(ID, activoNuevo15);
+    validacion = nuevo7->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"fuego03", "jutiapa", "cinepolis", 10);
+    //Este es el segundo activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo16 = new Activos("maletas", "maletas desde pequeñas a grandes");
+    nuevo7->insertar(ID, activoNuevo16);
+    validacion = nuevo7->modificarRentaActivo(ID, 15);
+    agregar_transaccion_Inicio(ID,"fuego03", "jutiapa", "cinepolis", 15);
+    //Este es el tercer activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo17 = new Activos("peliculas", "todo tipo de peliculas de accion");
+    nuevo7->insertar(ID, activoNuevo17);
+    validacion = nuevo7->modificarRentaActivo(ID, 5);
+    agregar_transaccion_Inicio(ID,"fuego03", "jutiapa", "cinepolis", 5);
+    //Aca se incertan a la matriz dispersas
+    Usuarios* userNuevo7 = new Usuarios("fuego03", "Fernando Mendez", "891346", nuevo7);
+    matrizGeneral->insertarValor(userNuevo7, "jutiapa", "cinepolis");
+
+    //Este es el usuario numero octavo
+
+    ClassAVL *nuevo8 = new ClassAVL();
+    Usuarios* userNuevo8 = new Usuarios("azurdia", "Alejandra Guzman", "780145", nuevo8);
+    matrizGeneral->insertarValor(userNuevo8, "jutiapa", "usac");
+
+    //Esta es el usuario numero noveno
+    //Aqui va un activo ingresado
+    ID = generarCadenaAlfanumerica();
+    ClassAVL *nuevo9 = new ClassAVL();
+    Activos *activoNuevo18 = new Activos("casest", "casets con musica de todo tipo");
+    nuevo9->insertar(ID, activoNuevo18);
+    validacion = nuevo9->modificarRentaActivo(ID, 5);
+    agregar_transaccion_Inicio(ID,"incrediboy", "jutiapa", "max", 5);
+    //Este es el segundo activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo19 = new Activos("pantallas", "pantallas para proyección");
+    nuevo9->insertar(ID, activoNuevo19);
+    validacion = nuevo9->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"incrediboy", "jutiapa", "max", 10);
+    //Este es el tercer activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo20 = new Activos("cañonera", "cañonera para proyeccion");
+    nuevo9->insertar(ID, activoNuevo20);
+    validacion = nuevo9->modificarRentaActivo(ID, 10);
+    agregar_transaccion_Inicio(ID,"incrediboy", "jutiapa", "max", 10);
+    //Este es el cuarto activo
+    ID = generarCadenaAlfanumerica();
+    Activos *activoNuevo21 = new Activos("toldo", "toldo para eventos al exterior");
+    nuevo9->insertar(ID, activoNuevo21);
+    validacion = nuevo9->modificarRentaActivo(ID, 5);
+    agregar_transaccion_Inicio(ID,"incrediboy", "jutiapa", "max", 5);
+    //Aca se incertan a la matriz dispersas
+    Usuarios* userNuevo9 = new Usuarios("incrediboy", "Iraldo Martinez", "201598", nuevo9);
+    matrizGeneral->insertarValor(userNuevo9, "jutiapa", "max");
+
+    //Este es el usuario decimo
+
+    ClassAVL *nuevo10 = new ClassAVL();
+    Usuarios* userNuevo10 = new Usuarios("alcachofa", "Antonio Lopez", "20435", nuevo10);
+    matrizGeneral->insertarValor(userNuevo10, "jalapa", "usac");
 
 }
 

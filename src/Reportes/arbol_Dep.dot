@@ -1,9 +1,22 @@
 digraph AVLTree {
-	label="Arbol AVL del Departamento = guate";
+	label="Arbol AVL del Departamento = guatemala";
     node [shape=circle];
-    "ayKxRy8dDkSWZOb" [color= blue, style=filled label="ID = ayKxRy8dDkSWZOb\nNombre = Pelotas"];
-    "ayKxRy8dDkSWZOb" -> "LKgjQdq4gPGTE8t";
-    "LKgjQdq4gPGTE8t" [color= blue, style=filled label="ID = LKgjQdq4gPGTE8t\nNombre = Televisores"];
-    "ayKxRy8dDkSWZOb" -> "hBNnUvgpLZoyrh3";
-    "hBNnUvgpLZoyrh3" [color= blue, style=filled label="ID = hBNnUvgpLZoyrh3\nNombre = Relojes"];
+    "8Y0tknlksfb0Csp" [color= red, style=filled label="ID = 8Y0tknlksfb0Csp\nNombre = madera"];
+    "8Y0tknlksfb0Csp" -> "4OJBdetSdTdQ9sL";
+    "4OJBdetSdTdQ9sL" [color= red, style=filled label="ID = 4OJBdetSdTdQ9sL\nNombre = martillos"];
+    "8Y0tknlksfb0Csp" -> "CKfzwZHXASHh6yt";
+    "CKfzwZHXASHh6yt" [color= red, style=filled label="ID = CKfzwZHXASHh6yt\nNombre = caladora"];
+    "CKfzwZHXASHh6yt" -> "U5Jq2rDefsxpPmy";
+    "U5Jq2rDefsxpPmy" [color= red, style=filled label="ID = U5Jq2rDefsxpPmy\nNombre = barreno"];
+    "mplTkCNamEYj0lG" [color= red, style=filled label="ID = mplTkCNamEYj0lG\nNombre = linternas"];
+    "mplTkCNamEYj0lG" -> "Wu1cWSJvb0PMEiu";
+    "Wu1cWSJvb0PMEiu" [color= red, style=filled label="ID = Wu1cWSJvb0PMEiu\nNombre = balanza"];
+    "Wu1cWSJvb0PMEiu" -> "h6koSmb4BWy4JLf";
+    "h6koSmb4BWy4JLf" [color= red, style=filled label="ID = h6koSmb4BWy4JLf\nNombre = cargadores"];
+    "mplTkCNamEYj0lG" -> "rkRcHqMpycE4qkN";
+    "rkRcHqMpycE4qkN" [color= red, style=filled label="ID = rkRcHqMpycE4qkN\nNombre = cables"];
+    "rkRcHqMpycE4qkN" -> "qhUZ6tsnGXDLybM";
+    "qhUZ6tsnGXDLybM" [color= red, style=filled label="ID = qhUZ6tsnGXDLybM\nNombre = lazos"];
+    "rkRcHqMpycE4qkN" -> "zo0mOfj9VWlcq0N";
+    "zo0mOfj9VWlcq0N" [color= red, style=filled label="ID = zo0mOfj9VWlcq0N\nNombre = canastas"];
 }

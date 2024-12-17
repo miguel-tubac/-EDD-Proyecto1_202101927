@@ -1,9 +1,16 @@
 digraph AVLTree {
-	label="Arbol AVL de la empresa = tecno sa";
+	label="Arbol AVL de la empresa = cinepolis";
     node [shape=circle];
-    "NjxVtXWpepIYT8q" [color= blue, style=filled label="ID = NjxVtXWpepIYT8q\nNombre = Alfombras"];
-    "NjxVtXWpepIYT8q" -> "3IwfXJ5f312BVlk";
-    "3IwfXJ5f312BVlk" [color= blue, style=filled label="ID = 3IwfXJ5f312BVlk\nNombre = Laptops"];
-    "NjxVtXWpepIYT8q" -> "ayKxRy8dDkSWZOb";
-    "ayKxRy8dDkSWZOb" [color= blue, style=filled label="ID = ayKxRy8dDkSWZOb\nNombre = Cuadernos"];
+    "HvBzhZIvKLhYHJf" [color= blue, style=filled label="ID = HvBzhZIvKLhYHJf\nNombre = maletas"];
+    "HvBzhZIvKLhYHJf" -> "Fm5cYdDRHg261OY";
+    "Fm5cYdDRHg261OY" [color= blue, style=filled label="ID = Fm5cYdDRHg261OY\nNombre = peliculas"];
+    "HvBzhZIvKLhYHJf" -> "gQ1QYpQtMxHzv19";
+    "gQ1QYpQtMxHzv19" [color= blue, style=filled label="ID = gQ1QYpQtMxHzv19\nNombre = termos"];
+    "NXihzZB7bCuHIV4" [color= blue, style=filled label="ID = NXihzZB7bCuHIV4\nNombre = audifonos"];
+    "NXihzZB7bCuHIV4" -> "3reKjmjaI488eew";
+    "3reKjmjaI488eew" [color= blue, style=filled label="ID = 3reKjmjaI488eew\nNombre = microfonos"];
+    "3reKjmjaI488eew" -> "8SMIoHZe4iZNAtE";
+    "8SMIoHZe4iZNAtE" [color= blue, style=filled label="ID = 8SMIoHZe4iZNAtE\nNombre = atriles"];
+    "NXihzZB7bCuHIV4" -> "XmjvhiymO5kHUYk";
+    "XmjvhiymO5kHUYk" [color= blue, style=filled label="ID = XmjvhiymO5kHUYk\nNombre = pedestales"];
 }
